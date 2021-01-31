@@ -1,0 +1,1111 @@
+.data
+.text
+	li $t0 0x10010000
+	li $t1 1073741824
+	sw $t1 0($t0)
+	j main
+myscanf :
+	addi $sp $sp -4
+	addi $sp $sp -4
+	sw $ra 0($sp)
+	li $v0 5
+	syscall
+	sw $v0 4($sp)
+	lw $t1 4($sp)
+	sw $t1 8164($t0)
+	lw $v0 8164($t0)
+	j ENDmyscanf
+ENDmyscanf :
+	lw $ra 0($sp)
+	addi $sp $sp 8
+	jr $ra
+myprintf :
+	addi $sp $sp -4
+	sw $ra 0($sp)
+	lw $t1 4($sp)
+	sw $t1 8168($t0)
+	li $v0 1
+	lw $a0 8168($t0)
+	syscall
+	li $v0 11
+	li $a0 '\n'
+	syscall
+	j ENDmyprintf
+ENDmyprintf :
+	lw $ra 0($sp)
+	addi $sp $sp 4
+	jr $ra
+checkrange :
+	addi $sp $sp -4
+	sw $ra 0($sp)
+label1 :
+	lw $t1 4($sp)
+	sw $t1 8172($t0)
+	lw $t1 8172($t0)
+	lw $t2 0($t0)
+	ble $t1 $t2 label2
+	lw $t1 4($sp)
+	sw $t1 8176($t0)
+	lw $t1 8176($t0)
+	lw $t2 0($t0)
+	sub $t1 $t1 $t2
+	sw $t1 8180($t0)
+	lw $t1 8180($t0)
+	sw $t1 4($sp)
+	j label1
+label2 :
+label3 :
+	lw $t1 4($sp)
+	sw $t1 8184($t0)
+	lw $t1 8184($t0)
+	bge $t1 0 label4
+	lw $t1 4($sp)
+	sw $t1 8188($t0)
+	lw $t1 8188($t0)
+	lw $t2 0($t0)
+	addu $t1 $t1 $t2
+	sw $t1 8192($t0)
+	lw $t1 8192($t0)
+	sw $t1 4($sp)
+	j label3
+label4 :
+	lw $t1 4($sp)
+	sw $t1 8196($t0)
+	lw $v0 8196($t0)
+	j ENDcheckrange
+ENDcheckrange :
+	lw $ra 0($sp)
+	addi $sp $sp 4
+	jr $ra
+reduce :
+	addi $sp $sp -4
+	addi $sp $sp -4
+	addi $sp $sp -4
+	sw $ra 0($sp)
+	lw $t1 12($sp)
+	sw $t1 8200($t0)
+	lw $t1 8200($t0)
+	bne $t1 0 label5
+	sw $ra 0($sp)
+	addi $sp $sp -4
+	lw $t1 8200($t0)
+	sw $t1 0($sp)
+	lw $t1 20($sp)
+	sw $t1 8204($t0)
+	lw $t1 24($sp)
+	sw $t1 8212($t0)
+	lw $t1 8204($t0)
+	lw $t2 8212($t0)
+	addu $t1 $t1 $t2
+	sw $t1 8208($t0)
+	addi $sp $sp -4
+	lw $t1 8208($t0)
+	sw $t1 0($sp)
+	jal checkrange
+	sw $v0 8216($t0)
+	addi $sp $sp 4
+	lw $t1 0($sp)
+	sw $t1 8200($t0)
+	addi $sp $sp 4
+	lw $ra 0($sp)
+	lw $v0 8216($t0)
+	j ENDreduce
+label5 :
+	lw $t1 12($sp)
+	sw $t1 8220($t0)
+	lw $t1 8220($t0)
+	bne $t1 1 label7
+	li $t1 0
+	sw $t1 8($sp)
+	li $t1 1
+	sw $t1 4($sp)
+label8 :
+	lw $t1 4($sp)
+	sw $t1 8224($t0)
+	lw $t1 8224($t0)
+	lw $t2 0($t0)
+	bge $t1 $t2 label9
+	lw $t1 16($sp)
+	sw $t1 8228($t0)
+	lw $t1 4($sp)
+	sw $t1 8236($t0)
+	lw $t1 8228($t0)
+	lw $t2 8236($t0)
+	div $t1 $t2
+	mflo $t1
+	sw $t1 8232($t0)
+	lw $t1 16($sp)
+	sw $t1 8244($t0)
+	lw $t1 4($sp)
+	sw $t1 8252($t0)
+	lw $t1 8244($t0)
+	lw $t2 8252($t0)
+	div $t1 $t2
+	mflo $t1
+	sw $t1 8248($t0)
+	lw $t1 8248($t0)
+	li $t2 2
+	div $t1 $t2
+	mflo $t1
+	sw $t1 8256($t0)
+	lw $t1 8256($t0)
+	addu $t1, $t1, $t1
+	sw $t1 8260($t0)
+	lw $t1 8232($t0)
+	lw $t2 8260($t0)
+	sub $t1 $t1 $t2
+	sw $t1 8240($t0)
+	lw $t1 20($sp)
+	sw $t1 8264($t0)
+	lw $t1 4($sp)
+	sw $t1 8272($t0)
+	lw $t1 8264($t0)
+	lw $t2 8272($t0)
+	div $t1 $t2
+	mflo $t1
+	sw $t1 8268($t0)
+	lw $t1 20($sp)
+	sw $t1 8280($t0)
+	lw $t1 4($sp)
+	sw $t1 8288($t0)
+	lw $t1 8280($t0)
+	lw $t2 8288($t0)
+	div $t1 $t2
+	mflo $t1
+	sw $t1 8284($t0)
+	lw $t1 8284($t0)
+	li $t2 2
+	div $t1 $t2
+	mflo $t1
+	sw $t1 8292($t0)
+	lw $t1 8292($t0)
+	addu $t1, $t1, $t1
+	sw $t1 8296($t0)
+	lw $t1 8268($t0)
+	lw $t2 8296($t0)
+	sub $t1 $t1 $t2
+	sw $t1 8276($t0)
+	lw $t1 8240($t0)
+	lw $t2 8276($t0)
+	bne $t1 $t2 label10
+	lw $t1 8($sp)
+	sw $t1 8300($t0)
+	lw $t1 8300($t0)
+	addu $t1, $t1, $t1
+	sw $t1 8304($t0)
+	lw $t1 8304($t0)
+	sw $t1 8($sp)
+	j label11
+label10 :
+	lw $t1 8($sp)
+	sw $t1 8308($t0)
+	lw $t1 8308($t0)
+	addu $t1, $t1, $t1
+	sw $t1 8312($t0)
+	lw $t1 8312($t0)
+	addiu $t1 $t1 1
+	sw $t1 8316($t0)
+	lw $t1 8316($t0)
+	sw $t1 8($sp)
+label11 :
+	lw $t1 4($sp)
+	sw $t1 8320($t0)
+	lw $t1 8320($t0)
+	addu $t1, $t1, $t1
+	sw $t1 8324($t0)
+	lw $t1 8324($t0)
+	sw $t1 4($sp)
+	j label8
+label9 :
+	lw $t1 8($sp)
+	sw $t1 8328($t0)
+	lw $v0 8328($t0)
+	j ENDreduce
+label7 :
+	lw $t1 12($sp)
+	sw $t1 8332($t0)
+	lw $t1 8332($t0)
+	bne $t1 2 label13
+	lw $t1 16($sp)
+	sw $t1 8336($t0)
+	lw $t1 20($sp)
+	sw $t1 8340($t0)
+	lw $t1 8336($t0)
+	lw $t2 8340($t0)
+	ble $t1 $t2 label14
+	lw $t1 16($sp)
+	sw $t1 8344($t0)
+	lw $v0 8344($t0)
+	j ENDreduce
+	j label15
+label14 :
+	lw $t1 20($sp)
+	sw $t1 8348($t0)
+	lw $v0 8348($t0)
+	j ENDreduce
+label15 :
+label13 :
+	lw $t1 12($sp)
+	sw $t1 8352($t0)
+	lw $t1 8352($t0)
+	bne $t1 3 label17
+	li $t1 0
+	sw $t1 8($sp)
+	li $t1 1
+	sw $t1 4($sp)
+label18 :
+	lw $t1 4($sp)
+	sw $t1 8356($t0)
+	lw $t1 8356($t0)
+	lw $t2 0($t0)
+	bge $t1 $t2 label19
+	lw $t1 16($sp)
+	sw $t1 8360($t0)
+	lw $t1 4($sp)
+	sw $t1 8368($t0)
+	lw $t1 8360($t0)
+	lw $t2 8368($t0)
+	div $t1 $t2
+	mflo $t1
+	sw $t1 8364($t0)
+	lw $t1 16($sp)
+	sw $t1 8376($t0)
+	lw $t1 4($sp)
+	sw $t1 8384($t0)
+	lw $t1 8376($t0)
+	lw $t2 8384($t0)
+	div $t1 $t2
+	mflo $t1
+	sw $t1 8380($t0)
+	lw $t1 8380($t0)
+	li $t2 2
+	div $t1 $t2
+	mflo $t1
+	sw $t1 8388($t0)
+	lw $t1 8388($t0)
+	addu $t1, $t1, $t1
+	sw $t1 8392($t0)
+	lw $t1 8364($t0)
+	lw $t2 8392($t0)
+	sub $t1 $t1 $t2
+	sw $t1 8372($t0)
+	lw $t1 8372($t0)
+	bne $t1 1 label20
+	lw $t1 8($sp)
+	sw $t1 8396($t0)
+	lw $t1 8396($t0)
+	addu $t1, $t1, $t1
+	sw $t1 8400($t0)
+	lw $t1 8400($t0)
+	addiu $t1 $t1 1
+	sw $t1 8404($t0)
+	lw $t1 8404($t0)
+	sw $t1 8($sp)
+	j label21
+label20 :
+	lw $t1 20($sp)
+	sw $t1 8408($t0)
+	lw $t1 4($sp)
+	sw $t1 8416($t0)
+	lw $t1 8408($t0)
+	lw $t2 8416($t0)
+	div $t1 $t2
+	mflo $t1
+	sw $t1 8412($t0)
+	lw $t1 20($sp)
+	sw $t1 8424($t0)
+	lw $t1 4($sp)
+	sw $t1 8432($t0)
+	lw $t1 8424($t0)
+	lw $t2 8432($t0)
+	div $t1 $t2
+	mflo $t1
+	sw $t1 8428($t0)
+	lw $t1 8428($t0)
+	li $t2 2
+	div $t1 $t2
+	mflo $t1
+	sw $t1 8436($t0)
+	lw $t1 8436($t0)
+	addu $t1, $t1, $t1
+	sw $t1 8440($t0)
+	lw $t1 8412($t0)
+	lw $t2 8440($t0)
+	sub $t1 $t1 $t2
+	sw $t1 8420($t0)
+	lw $t1 8420($t0)
+	bne $t1 1 label22
+	lw $t1 8($sp)
+	sw $t1 8444($t0)
+	lw $t1 8444($t0)
+	addu $t1, $t1, $t1
+	sw $t1 8448($t0)
+	lw $t1 8448($t0)
+	addiu $t1 $t1 1
+	sw $t1 8452($t0)
+	lw $t1 8452($t0)
+	sw $t1 8($sp)
+label22 :
+	lw $t1 8($sp)
+	sw $t1 8456($t0)
+	lw $t1 8456($t0)
+	addu $t1, $t1, $t1
+	sw $t1 8460($t0)
+	lw $t1 8460($t0)
+	sw $t1 8($sp)
+label21 :
+	lw $t1 4($sp)
+	sw $t1 8464($t0)
+	lw $t1 8464($t0)
+	addu $t1, $t1, $t1
+	sw $t1 8468($t0)
+	lw $t1 8468($t0)
+	sw $t1 4($sp)
+	j label18
+label19 :
+	lw $t1 8($sp)
+	sw $t1 8472($t0)
+	lw $v0 8472($t0)
+	j ENDreduce
+label17 :
+	lw $t1 12($sp)
+	sw $t1 8476($t0)
+	lw $t1 8476($t0)
+	bne $t1 4 label25
+	li $t1 0
+	sw $t1 8($sp)
+	li $t1 1
+	sw $t1 4($sp)
+label26 :
+	lw $t1 4($sp)
+	sw $t1 8480($t0)
+	lw $t1 8480($t0)
+	lw $t2 0($t0)
+	bge $t1 $t2 label27
+	lw $t1 16($sp)
+	sw $t1 8484($t0)
+	lw $t1 4($sp)
+	sw $t1 8492($t0)
+	lw $t1 8484($t0)
+	lw $t2 8492($t0)
+	div $t1 $t2
+	mflo $t1
+	sw $t1 8488($t0)
+	lw $t1 16($sp)
+	sw $t1 8500($t0)
+	lw $t1 4($sp)
+	sw $t1 8508($t0)
+	lw $t1 8500($t0)
+	lw $t2 8508($t0)
+	div $t1 $t2
+	mflo $t1
+	sw $t1 8504($t0)
+	lw $t1 8504($t0)
+	li $t2 2
+	div $t1 $t2
+	mflo $t1
+	sw $t1 8512($t0)
+	lw $t1 8512($t0)
+	addu $t1, $t1, $t1
+	sw $t1 8516($t0)
+	lw $t1 8488($t0)
+	lw $t2 8516($t0)
+	sub $t1 $t1 $t2
+	sw $t1 8496($t0)
+	lw $t1 8496($t0)
+	bne $t1 1 label28
+	lw $t1 20($sp)
+	sw $t1 8520($t0)
+	lw $t1 4($sp)
+	sw $t1 8528($t0)
+	lw $t1 8520($t0)
+	lw $t2 8528($t0)
+	div $t1 $t2
+	mflo $t1
+	sw $t1 8524($t0)
+	lw $t1 20($sp)
+	sw $t1 8536($t0)
+	lw $t1 4($sp)
+	sw $t1 8544($t0)
+	lw $t1 8536($t0)
+	lw $t2 8544($t0)
+	div $t1 $t2
+	mflo $t1
+	sw $t1 8540($t0)
+	lw $t1 8540($t0)
+	li $t2 2
+	div $t1 $t2
+	mflo $t1
+	sw $t1 8548($t0)
+	lw $t1 8548($t0)
+	addu $t1, $t1, $t1
+	sw $t1 8552($t0)
+	lw $t1 8524($t0)
+	lw $t2 8552($t0)
+	sub $t1 $t1 $t2
+	sw $t1 8532($t0)
+	lw $t1 8532($t0)
+	bne $t1 1 label29
+	lw $t1 8($sp)
+	sw $t1 8556($t0)
+	lw $t1 8556($t0)
+	addu $t1, $t1, $t1
+	sw $t1 8560($t0)
+	lw $t1 8560($t0)
+	addiu $t1 $t1 1
+	sw $t1 8564($t0)
+	lw $t1 8564($t0)
+	sw $t1 8($sp)
+	j label30
+label29 :
+	lw $t1 8($sp)
+	sw $t1 8568($t0)
+	lw $t1 8568($t0)
+	addu $t1, $t1, $t1
+	sw $t1 8572($t0)
+	lw $t1 8572($t0)
+	sw $t1 8($sp)
+label30 :
+	j label31
+label28 :
+	lw $t1 8($sp)
+	sw $t1 8576($t0)
+	lw $t1 8576($t0)
+	addu $t1, $t1, $t1
+	sw $t1 8580($t0)
+	lw $t1 8580($t0)
+	sw $t1 8($sp)
+label31 :
+	lw $t1 4($sp)
+	sw $t1 8584($t0)
+	lw $t1 8584($t0)
+	addu $t1, $t1, $t1
+	sw $t1 8588($t0)
+	lw $t1 8588($t0)
+	sw $t1 4($sp)
+	j label26
+label27 :
+	lw $t1 8($sp)
+	sw $t1 8592($t0)
+	lw $v0 8592($t0)
+	j ENDreduce
+label25 :
+	li $v0 0
+	j ENDreduce
+ENDreduce :
+	lw $ra 0($sp)
+	addi $sp $sp 12
+	jr $ra
+getvalue :
+	addi $sp $sp -4
+	sw $ra 0($sp)
+	lw $t1 12($sp)
+	sw $t1 8596($t0)
+	lw $t1 8596($t0)
+	bge $t1 0 label33
+	li $v0 0
+	j ENDgetvalue
+label33 :
+	lw $t1 16($sp)
+	sw $t1 8600($t0)
+	lw $t1 8600($t0)
+	bge $t1 0 label35
+	li $v0 0
+	j ENDgetvalue
+label35 :
+	lw $t1 12($sp)
+	sw $t1 8604($t0)
+	lw $t1 4($sp)
+	sw $t1 8608($t0)
+	lw $t1 8604($t0)
+	lw $t2 8608($t0)
+	blt $t1 $t2 label37
+	li $v0 0
+	j ENDgetvalue
+label37 :
+	lw $t1 16($sp)
+	sw $t1 8612($t0)
+	lw $t1 8($sp)
+	sw $t1 8616($t0)
+	lw $t1 8612($t0)
+	lw $t2 8616($t0)
+	blt $t1 $t2 label39
+	li $v0 0
+	j ENDgetvalue
+label39 :
+	lw $t1 12($sp)
+	sw $t1 8620($t0)
+	lw $t1 8($sp)
+	sw $t1 8628($t0)
+	lw $t1 8620($t0)
+	lw $t2 8628($t0)
+	mul $t1 $t1 $t2
+	sw $t1 8624($t0)
+	lw $t1 16($sp)
+	sw $t1 8636($t0)
+	lw $t1 8624($t0)
+	lw $t2 8636($t0)
+	addu $t1 $t1 $t2
+	sw $t1 8632($t0)
+	lw $t1 8632($t0)
+	sll $t1 $t1 2
+	sw $t1 8640($t0)
+	lw $t1 8640($t0)
+	addi $t1 $t1 4
+	addu $t1 $t1 $t0
+	lw $t1 0($t1)
+	sw $t1 8644($t0)
+	lw $v0 8644($t0)
+	j ENDgetvalue
+ENDgetvalue :
+	lw $ra 0($sp)
+	addi $sp $sp 4
+	jr $ra
+convn :
+	addi $sp $sp -4
+	li $t1 0
+	sw $t1 0($sp)
+	addi $sp $sp -4
+	li $t1 0
+	sw $t1 0($sp)
+	addi $sp $sp -4
+	addi $sp $sp -4
+	addi $sp $sp -4
+	addi $sp $sp -4
+	li $t1 1
+	sw $t1 0($sp)
+	addi $sp $sp -4
+	li $t1 1
+	sw $t1 0($sp)
+	addi $sp $sp -4
+	li $t1 1
+	sw $t1 0($sp)
+	addi $sp $sp -4
+	li $t1 1
+	sw $t1 0($sp)
+	addi $sp $sp -4
+	sw $ra 0($sp)
+label41 :
+	lw $t1 16($sp)
+	sw $t1 8648($t0)
+	lw $t1 8648($t0)
+	bne $t1 1 label42
+	li $t1 0
+	sw $t1 32($sp)
+label43 :
+	lw $t1 12($sp)
+	sw $t1 8652($t0)
+	lw $t1 8652($t0)
+	bne $t1 1 label44
+	li $t1 0
+	sw $t1 20($sp)
+	lw $t1 36($sp)
+	sw $t1 8656($t0)
+	lw $t1 52($sp)
+	sw $t1 8664($t0)
+	lw $t1 8664($t0)
+	li $t2 2
+	div $t1 $t2
+	mflo $t1
+	sw $t1 8668($t0)
+	lw $t1 8656($t0)
+	lw $t2 8668($t0)
+	sub $t1 $t1 $t2
+	sw $t1 8660($t0)
+	lw $t1 8660($t0)
+	sw $t1 28($sp)
+label45 :
+	lw $t1 8($sp)
+	sw $t1 8672($t0)
+	lw $t1 8672($t0)
+	bne $t1 1 label46
+	lw $t1 32($sp)
+	sw $t1 8676($t0)
+	lw $t1 52($sp)
+	sw $t1 8684($t0)
+	lw $t1 8684($t0)
+	li $t2 2
+	div $t1 $t2
+	mflo $t1
+	sw $t1 8688($t0)
+	lw $t1 8676($t0)
+	lw $t2 8688($t0)
+	sub $t1 $t1 $t2
+	sw $t1 8680($t0)
+	lw $t1 8680($t0)
+	sw $t1 24($sp)
+label47 :
+	lw $t1 4($sp)
+	sw $t1 8692($t0)
+	lw $t1 8692($t0)
+	bne $t1 1 label48
+	sw $ra 0($sp)
+	addi $sp $sp -48
+	lw $t1 8648($t0)
+	sw $t1 0($sp)
+	lw $t1 8652($t0)
+	sw $t1 4($sp)
+	lw $t1 8656($t0)
+	sw $t1 8($sp)
+	lw $t1 8660($t0)
+	sw $t1 12($sp)
+	lw $t1 8664($t0)
+	sw $t1 16($sp)
+	lw $t1 8668($t0)
+	sw $t1 20($sp)
+	lw $t1 8672($t0)
+	sw $t1 24($sp)
+	lw $t1 8676($t0)
+	sw $t1 28($sp)
+	lw $t1 8680($t0)
+	sw $t1 32($sp)
+	lw $t1 8684($t0)
+	sw $t1 36($sp)
+	lw $t1 8688($t0)
+	sw $t1 40($sp)
+	lw $t1 8692($t0)
+	sw $t1 44($sp)
+	lw $t1 88($sp)
+	sw $t1 8696($t0)
+	lw $t1 68($sp)
+	sw $t1 8700($t0)
+	sw $ra 0($sp)
+	addi $sp $sp -56
+	lw $t1 8648($t0)
+	sw $t1 0($sp)
+	lw $t1 8652($t0)
+	sw $t1 4($sp)
+	lw $t1 8656($t0)
+	sw $t1 8($sp)
+	lw $t1 8660($t0)
+	sw $t1 12($sp)
+	lw $t1 8664($t0)
+	sw $t1 16($sp)
+	lw $t1 8668($t0)
+	sw $t1 20($sp)
+	lw $t1 8672($t0)
+	sw $t1 24($sp)
+	lw $t1 8676($t0)
+	sw $t1 28($sp)
+	lw $t1 8680($t0)
+	sw $t1 32($sp)
+	lw $t1 8684($t0)
+	sw $t1 36($sp)
+	lw $t1 8688($t0)
+	sw $t1 40($sp)
+	lw $t1 8692($t0)
+	sw $t1 44($sp)
+	lw $t1 8696($t0)
+	sw $t1 48($sp)
+	lw $t1 8700($t0)
+	sw $t1 52($sp)
+	lw $t1 148($sp)
+	sw $t1 8704($t0)
+	lw $t1 152($sp)
+	sw $t1 8708($t0)
+	lw $t1 132($sp)
+	sw $t1 8712($t0)
+	lw $t1 128($sp)
+	sw $t1 8716($t0)
+	addi $sp $sp -16
+	lw $t1 8704($t0)
+	sw $t1 0($sp)
+	lw $t1 8708($t0)
+	sw $t1 4($sp)
+	lw $t1 8712($t0)
+	sw $t1 8($sp)
+	lw $t1 8716($t0)
+	sw $t1 12($sp)
+	jal getvalue
+	sw $v0 8720($t0)
+	addi $sp $sp 16
+	lw $t1 0($sp)
+	sw $t1 8648($t0)
+	lw $t1 4($sp)
+	sw $t1 8652($t0)
+	lw $t1 8($sp)
+	sw $t1 8656($t0)
+	lw $t1 12($sp)
+	sw $t1 8660($t0)
+	lw $t1 16($sp)
+	sw $t1 8664($t0)
+	lw $t1 20($sp)
+	sw $t1 8668($t0)
+	lw $t1 24($sp)
+	sw $t1 8672($t0)
+	lw $t1 28($sp)
+	sw $t1 8676($t0)
+	lw $t1 32($sp)
+	sw $t1 8680($t0)
+	lw $t1 36($sp)
+	sw $t1 8684($t0)
+	lw $t1 40($sp)
+	sw $t1 8688($t0)
+	lw $t1 44($sp)
+	sw $t1 8692($t0)
+	lw $t1 48($sp)
+	sw $t1 8696($t0)
+	lw $t1 52($sp)
+	sw $t1 8700($t0)
+	addi $sp $sp 56
+	lw $ra 0($sp)
+	addi $sp $sp -12
+	lw $t1 8696($t0)
+	sw $t1 0($sp)
+	lw $t1 8700($t0)
+	sw $t1 4($sp)
+	lw $t1 8720($t0)
+	sw $t1 8($sp)
+	jal reduce
+	sw $v0 8724($t0)
+	addi $sp $sp 12
+	lw $t1 0($sp)
+	sw $t1 8648($t0)
+	lw $t1 4($sp)
+	sw $t1 8652($t0)
+	lw $t1 8($sp)
+	sw $t1 8656($t0)
+	lw $t1 12($sp)
+	sw $t1 8660($t0)
+	lw $t1 16($sp)
+	sw $t1 8664($t0)
+	lw $t1 20($sp)
+	sw $t1 8668($t0)
+	lw $t1 24($sp)
+	sw $t1 8672($t0)
+	lw $t1 28($sp)
+	sw $t1 8676($t0)
+	lw $t1 32($sp)
+	sw $t1 8680($t0)
+	lw $t1 36($sp)
+	sw $t1 8684($t0)
+	lw $t1 40($sp)
+	sw $t1 8688($t0)
+	lw $t1 44($sp)
+	sw $t1 8692($t0)
+	addi $sp $sp 48
+	lw $ra 0($sp)
+	lw $t1 8724($t0)
+	sw $t1 20($sp)
+	lw $t1 24($sp)
+	sw $t1 8728($t0)
+	lw $t1 8728($t0)
+	addiu $t1 $t1 1
+	sw $t1 8732($t0)
+	lw $t1 8732($t0)
+	sw $t1 24($sp)
+	lw $t1 24($sp)
+	sw $t1 8736($t0)
+	lw $t1 32($sp)
+	sw $t1 8740($t0)
+	lw $t1 52($sp)
+	sw $t1 8748($t0)
+	lw $t1 8748($t0)
+	li $t2 2
+	div $t1 $t2
+	mflo $t1
+	sw $t1 8752($t0)
+	lw $t1 8740($t0)
+	lw $t2 8752($t0)
+	addu $t1 $t1 $t2
+	sw $t1 8744($t0)
+	lw $t1 8736($t0)
+	lw $t2 8744($t0)
+	blt $t1 $t2 label49
+	li $t1 0
+	sw $t1 4($sp)
+label49 :
+	j label47
+label48 :
+	li $t1 1
+	sw $t1 4($sp)
+	lw $t1 28($sp)
+	sw $t1 8756($t0)
+	lw $t1 8756($t0)
+	addiu $t1 $t1 1
+	sw $t1 8760($t0)
+	lw $t1 8760($t0)
+	sw $t1 28($sp)
+	lw $t1 28($sp)
+	sw $t1 8764($t0)
+	lw $t1 36($sp)
+	sw $t1 8768($t0)
+	lw $t1 52($sp)
+	sw $t1 8776($t0)
+	lw $t1 8776($t0)
+	li $t2 2
+	div $t1 $t2
+	mflo $t1
+	sw $t1 8780($t0)
+	lw $t1 8768($t0)
+	lw $t2 8780($t0)
+	addu $t1 $t1 $t2
+	sw $t1 8772($t0)
+	lw $t1 8764($t0)
+	lw $t2 8772($t0)
+	blt $t1 $t2 label51
+	li $t1 0
+	sw $t1 8($sp)
+label51 :
+	j label45
+label46 :
+	li $t1 1
+	sw $t1 8($sp)
+	lw $t1 36($sp)
+	sw $t1 8784($t0)
+	lw $t1 48($sp)
+	sw $t1 8792($t0)
+	lw $t1 8784($t0)
+	lw $t2 8792($t0)
+	mul $t1 $t1 $t2
+	sw $t1 8788($t0)
+	lw $t1 32($sp)
+	sw $t1 8800($t0)
+	lw $t1 8788($t0)
+	lw $t2 8800($t0)
+	addu $t1 $t1 $t2
+	sw $t1 8796($t0)
+	lw $t1 20($sp)
+	sw $t1 8804($t0)
+	lw $t1 8796($t0)
+	sll $t1 $t1 2
+	sw $t1 8808($t0)
+	lw $t1 8804($t0)
+	lw $t2 8808($t0)
+	addi $t2 $t2 4004
+	addu $t2 $t2 $t0
+	sw $t1 0($t2)
+	lw $t1 32($sp)
+	sw $t1 8812($t0)
+	lw $t1 8812($t0)
+	addiu $t1 $t1 1
+	sw $t1 8816($t0)
+	lw $t1 8816($t0)
+	sw $t1 32($sp)
+	lw $t1 32($sp)
+	sw $t1 8820($t0)
+	lw $t1 48($sp)
+	sw $t1 8824($t0)
+	lw $t1 8820($t0)
+	lw $t2 8824($t0)
+	blt $t1 $t2 label53
+	li $t1 0
+	sw $t1 12($sp)
+label53 :
+	j label43
+label44 :
+	li $t1 1
+	sw $t1 12($sp)
+	lw $t1 36($sp)
+	sw $t1 8828($t0)
+	lw $t1 8828($t0)
+	addiu $t1 $t1 1
+	sw $t1 8832($t0)
+	lw $t1 8832($t0)
+	sw $t1 36($sp)
+	lw $t1 36($sp)
+	sw $t1 8836($t0)
+	lw $t1 44($sp)
+	sw $t1 8840($t0)
+	lw $t1 8836($t0)
+	lw $t2 8840($t0)
+	blt $t1 $t2 label55
+	li $t1 0
+	sw $t1 16($sp)
+label55 :
+	j label41
+label42 :
+	li $v0 0
+	j ENDconvn
+ENDconvn :
+	lw $ra 0($sp)
+	addi $sp $sp 40
+	jr $ra
+mymemmove :
+	addi $sp $sp -4
+	li $t1 0
+	sw $t1 0($sp)
+	addi $sp $sp -4
+	sw $ra 0($sp)
+label57 :
+	lw $t1 4($sp)
+	sw $t1 8844($t0)
+	lw $t1 8($sp)
+	sw $t1 8848($t0)
+	lw $t1 8844($t0)
+	lw $t2 8848($t0)
+	bge $t1 $t2 label58
+	lw $t1 4($sp)
+	sw $t1 8852($t0)
+	lw $t1 4($sp)
+	sw $t1 8856($t0)
+	lw $t1 8856($t0)
+	sll $t1 $t1 2
+	sw $t1 8860($t0)
+	lw $t1 8860($t0)
+	addi $t1 $t1 4004
+	addu $t1 $t1 $t0
+	lw $t1 0($t1)
+	sw $t1 8864($t0)
+	lw $t1 8852($t0)
+	sll $t1 $t1 2
+	sw $t1 8868($t0)
+	lw $t1 8864($t0)
+	lw $t2 8868($t0)
+	addi $t2 $t2 4
+	addu $t2 $t2 $t0
+	sw $t1 0($t2)
+	lw $t1 4($sp)
+	sw $t1 8872($t0)
+	lw $t1 8872($t0)
+	addiu $t1 $t1 1
+	sw $t1 8876($t0)
+	lw $t1 8876($t0)
+	sw $t1 4($sp)
+	j label57
+label58 :
+ENDmymemmove :
+	lw $ra 0($sp)
+	addi $sp $sp 8
+	jr $ra
+main :
+	li $t1 0
+	sw $t1 8904($t0)
+	jal myscanf
+	sw $v0 8908($t0)
+	lw $t1 8908($t0)
+	sw $t1 8880($t0)
+	jal myscanf
+	sw $v0 8912($t0)
+	lw $t1 8912($t0)
+	sw $t1 8884($t0)
+	jal myscanf
+	sw $v0 8916($t0)
+	lw $t1 8916($t0)
+	sw $t1 8888($t0)
+	jal myscanf
+	sw $v0 8920($t0)
+	lw $t1 8920($t0)
+	sw $t1 8896($t0)
+label59 :
+	lw $t1 8904($t0)
+	lw $t2 8896($t0)
+	bge $t1 $t2 label60
+	jal myscanf
+	sw $v0 8924($t0)
+	lw $t1 8904($t0)
+	sll $t1 $t1 2
+	sw $t1 8928($t0)
+	lw $t1 8924($t0)
+	lw $t2 8928($t0)
+	addi $t2 $t2 4
+	addu $t2 $t2 $t0
+	sw $t1 0($t2)
+	lw $t1 8904($t0)
+	addiu $t1 $t1 1
+	sw $t1 8932($t0)
+	lw $t1 8932($t0)
+	sw $t1 8904($t0)
+	j label59
+label60 :
+	jal myscanf
+	sw $v0 8936($t0)
+	lw $t1 8936($t0)
+	sw $t1 8892($t0)
+	li $t1 0
+	sw $t1 8904($t0)
+label61 :
+	lw $t1 8904($t0)
+	lw $t2 8892($t0)
+	bge $t1 $t2 label62
+	jal myscanf
+	sw $v0 8940($t0)
+	lw $t1 8904($t0)
+	sll $t1 $t1 2
+	sw $t1 8944($t0)
+	lw $t1 8940($t0)
+	lw $t2 8944($t0)
+	addi $t2 $t2 8004
+	addu $t2 $t2 $t0
+	sw $t1 0($t2)
+	lw $t1 8904($t0)
+	addiu $t1 $t1 1
+	sw $t1 8948($t0)
+	lw $t1 8948($t0)
+	sw $t1 8904($t0)
+	j label61
+label62 :
+	li $t1 0
+	sw $t1 8904($t0)
+label63 :
+	lw $t1 8904($t0)
+	lw $t2 8892($t0)
+	bge $t1 $t2 label64
+	lw $t1 8904($t0)
+	sll $t1 $t1 2
+	sw $t1 8952($t0)
+	lw $t1 8952($t0)
+	addi $t1 $t1 8004
+	addu $t1 $t1 $t0
+	lw $t1 0($t1)
+	sw $t1 8956($t0)
+	addi $sp $sp -16
+	lw $t1 8956($t0)
+	sw $t1 0($sp)
+	lw $t1 8884($t0)
+	sw $t1 4($sp)
+	lw $t1 8888($t0)
+	sw $t1 8($sp)
+	lw $t1 8880($t0)
+	sw $t1 12($sp)
+	jal convn
+	sw $v0 8960($t0)
+	addi $sp $sp 16
+	lw $t1 8884($t0)
+	lw $t2 8888($t0)
+	mul $t1 $t1 $t2
+	sw $t1 8964($t0)
+	addi $sp $sp -4
+	lw $t1 8964($t0)
+	sw $t1 0($sp)
+	jal mymemmove
+	addi $sp $sp 4
+	lw $t1 8904($t0)
+	addiu $t1 $t1 1
+	sw $t1 8968($t0)
+	lw $t1 8968($t0)
+	sw $t1 8904($t0)
+	j label63
+label64 :
+	li $t1 0
+	sw $t1 8904($t0)
+label65 :
+	lw $t1 8884($t0)
+	lw $t2 8888($t0)
+	mul $t1 $t1 $t2
+	sw $t1 8972($t0)
+	lw $t1 8904($t0)
+	lw $t2 8972($t0)
+	bge $t1 $t2 label66
+	lw $t1 8904($t0)
+	sll $t1 $t1 2
+	sw $t1 8976($t0)
+	lw $t1 8976($t0)
+	addi $t1 $t1 4
+	addu $t1 $t1 $t0
+	lw $t1 0($t1)
+	sw $t1 8980($t0)
+	addi $sp $sp -4
+	lw $t1 8980($t0)
+	sw $t1 0($sp)
+	jal myprintf
+	addi $sp $sp 4
+	lw $t1 8904($t0)
+	addiu $t1 $t1 1
+	sw $t1 8984($t0)
+	lw $t1 8984($t0)
+	sw $t1 8904($t0)
+	j label65
+label66 :
+	j EndMain
+EndMain :

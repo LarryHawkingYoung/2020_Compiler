@@ -1,0 +1,14 @@
+int f1(int a, int b){
+ return(233);
+}
+void f2(){
+ printf("larry");
+}
+int f1(int c, int d){
+ f2(c, d);
+ return(233);
+}
+void main(){
+ printf("young");
+ return;
+}

@@ -1,0 +1,17 @@
+int arry_a[3], a, as[3], ass[4][6];
+int arry_1[10] = {1,1,1,1,1,1,1,1,1,1};
+
+int func1(int para1)
+{
+	const int ll = 1;
+	char rr = 'a'; 
+	return para1;	
+}
+
+void main()
+{
+	arry_a[2] = 3;
+	a = 4;
+	as[1] = arry_1[5];
+	ass[2][5] = (a + arry_a[2] - arry_1[6]) * 6;
+}

@@ -1,0 +1,26 @@
+void main(){
+int k = 4;
+printf("18373528");
+while(k > 2) {
+	printf("asd22");
+	k=k-1;
+}
+for(k=2;k>=0;k=k-1) {
+	printf("%d", k*3-1);
+}
+if(k!=-1){
+	k=k+1;
+}
+if(k==2){
+	k=k-1;
+}else{}
+switch(k/1*4-k+2){
+	case 1: k=k*5;
+	case 2: k=k-0;
+	default: k=k-9;
+}
+printf("lllllllllll");
+printf("aaaallll");
+printf("rrrrrllll");
+printf("lllyyyyylll");
+}

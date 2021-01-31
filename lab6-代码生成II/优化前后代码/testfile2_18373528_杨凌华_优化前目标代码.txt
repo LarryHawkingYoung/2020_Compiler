@@ -1,0 +1,1126 @@
+.data
+str1: .asciiz "-"
+.text
+	li $t0 0x10010000
+	j main
+min :
+	addi $sp $sp -4
+	sw $ra 0($sp)
+	lw $t1 4($sp)
+	sw $t1 1612($t0)
+	lw $t1 8($sp)
+	sw $t1 1616($t0)
+	lw $t1 1612($t0)
+	lw $t2 1616($t0)
+	ble $t1 $t2 label1
+	lw $t1 8($sp)
+	sw $t1 1620($t0)
+	lw $v0 1620($t0)
+	j ENDmin
+	j label2
+label1 :
+	lw $t1 4($sp)
+	sw $t1 1624($t0)
+	lw $v0 1624($t0)
+	j ENDmin
+label2 :
+ENDmin :
+	lw $ra 0($sp)
+	addi $sp $sp 4
+	jr $ra
+max :
+	addi $sp $sp -4
+	sw $ra 0($sp)
+	lw $t1 4($sp)
+	sw $t1 1628($t0)
+	lw $t1 8($sp)
+	sw $t1 1632($t0)
+	lw $t1 1628($t0)
+	lw $t2 1632($t0)
+	ble $t1 $t2 label3
+	lw $t1 4($sp)
+	sw $t1 1636($t0)
+	lw $v0 1636($t0)
+	j ENDmax
+	j label4
+label3 :
+	lw $t1 8($sp)
+	sw $t1 1640($t0)
+	lw $v0 1640($t0)
+	j ENDmax
+label4 :
+ENDmax :
+	lw $ra 0($sp)
+	addi $sp $sp 4
+	jr $ra
+compare :
+	addi $sp $sp -4
+	li $t1 0
+	sw $t1 0($sp)
+	addi $sp $sp -4
+	sw $ra 0($sp)
+	li $t1 0
+	sw $t1 1644($t0)
+	lw $t1 1644($t0)
+	addi $t1 $t1 804
+	addu $t1 $t1 $t0
+	lw $t1 0($t1)
+	sw $t1 1648($t0)
+	li $t1 4
+	sw $t1 1652($t0)
+	lw $t1 1652($t0)
+	addi $t1 $t1 804
+	addu $t1 $t1 $t0
+	lw $t1 0($t1)
+	sw $t1 1656($t0)
+	lw $t1 1648($t0)
+	lw $t2 1656($t0)
+	ble $t1 $t2 label5
+	li $v0 1
+	j ENDcompare
+label5 :
+	li $t1 0
+	sw $t1 1660($t0)
+	lw $t1 1660($t0)
+	addi $t1 $t1 804
+	addu $t1 $t1 $t0
+	lw $t1 0($t1)
+	sw $t1 1664($t0)
+	li $t1 4
+	sw $t1 1668($t0)
+	lw $t1 1668($t0)
+	addi $t1 $t1 804
+	addu $t1 $t1 $t0
+	lw $t1 0($t1)
+	sw $t1 1672($t0)
+	lw $t1 1664($t0)
+	lw $t2 1672($t0)
+	bge $t1 $t2 label7
+	li $t1 -1
+	sw $t1 1676($t0)
+	lw $v0 1676($t0)
+	j ENDcompare
+label7 :
+label9 :
+	lw $t1 4($sp)
+	sw $t1 1680($t0)
+	li $t1 0
+	sw $t1 1684($t0)
+	lw $t1 1684($t0)
+	addi $t1 $t1 804
+	addu $t1 $t1 $t0
+	lw $t1 0($t1)
+	sw $t1 1688($t0)
+	lw $t1 1680($t0)
+	lw $t2 1688($t0)
+	bge $t1 $t2 label10
+	li $t1 0
+	sw $t1 1692($t0)
+	lw $t1 4($sp)
+	sw $t1 1696($t0)
+	lw $t1 1692($t0)
+	mul $t1 $t1 100
+	sw $t1 1692($t0)
+	lw $t1 1696($t0)
+	sll $t1 $t1 2
+	sw $t1 1700($t0)
+	lw $t1 1692($t0)
+	lw $t2 1700($t0)
+	addu $t1 $t1 $t2
+	sw $t1 1692($t0)
+	lw $t1 1692($t0)
+	addi $t1 $t1 4
+	addu $t1 $t1 $t0
+	lw $t1 0($t1)
+	sw $t1 1704($t0)
+	li $t1 4
+	sw $t1 1708($t0)
+	lw $t1 4($sp)
+	sw $t1 1712($t0)
+	lw $t1 1708($t0)
+	mul $t1 $t1 100
+	sw $t1 1708($t0)
+	lw $t1 1712($t0)
+	sll $t1 $t1 2
+	sw $t1 1716($t0)
+	lw $t1 1708($t0)
+	lw $t2 1716($t0)
+	addu $t1 $t1 $t2
+	sw $t1 1708($t0)
+	lw $t1 1708($t0)
+	addi $t1 $t1 4
+	addu $t1 $t1 $t0
+	lw $t1 0($t1)
+	sw $t1 1720($t0)
+	lw $t1 1704($t0)
+	lw $t2 1720($t0)
+	ble $t1 $t2 label11
+	li $v0 1
+	j ENDcompare
+label11 :
+	li $t1 0
+	sw $t1 1724($t0)
+	lw $t1 4($sp)
+	sw $t1 1728($t0)
+	lw $t1 1724($t0)
+	mul $t1 $t1 100
+	sw $t1 1724($t0)
+	lw $t1 1728($t0)
+	sll $t1 $t1 2
+	sw $t1 1732($t0)
+	lw $t1 1724($t0)
+	lw $t2 1732($t0)
+	addu $t1 $t1 $t2
+	sw $t1 1724($t0)
+	lw $t1 1724($t0)
+	addi $t1 $t1 4
+	addu $t1 $t1 $t0
+	lw $t1 0($t1)
+	sw $t1 1736($t0)
+	li $t1 4
+	sw $t1 1740($t0)
+	lw $t1 4($sp)
+	sw $t1 1744($t0)
+	lw $t1 1740($t0)
+	mul $t1 $t1 100
+	sw $t1 1740($t0)
+	lw $t1 1744($t0)
+	sll $t1 $t1 2
+	sw $t1 1748($t0)
+	lw $t1 1740($t0)
+	lw $t2 1748($t0)
+	addu $t1 $t1 $t2
+	sw $t1 1740($t0)
+	lw $t1 1740($t0)
+	addi $t1 $t1 4
+	addu $t1 $t1 $t0
+	lw $t1 0($t1)
+	sw $t1 1752($t0)
+	lw $t1 1736($t0)
+	lw $t2 1752($t0)
+	bge $t1 $t2 label13
+	li $t1 -1
+	sw $t1 1756($t0)
+	lw $v0 1756($t0)
+	j ENDcompare
+label13 :
+	lw $t1 4($sp)
+	sw $t1 1760($t0)
+	lw $t1 1760($t0)
+	addiu $t1 $t1 1
+	sw $t1 1764($t0)
+	lw $t1 1764($t0)
+	sw $t1 4($sp)
+	j label9
+label10 :
+	li $v0 0
+	j ENDcompare
+ENDcompare :
+	lw $ra 0($sp)
+	addi $sp $sp 8
+	jr $ra
+subtract :
+	addi $sp $sp -400
+	addi $sp $sp -400
+	addi $sp $sp -400
+	addi $sp $sp -4
+	addi $sp $sp -4
+	addi $sp $sp -4
+	addi $sp $sp -4
+	addi $sp $sp -4
+	addi $sp $sp -4
+	addi $sp $sp -4
+	sw $ra 0($sp)
+	li $t1 0
+	sw $t1 1768($t0)
+	lw $t1 1768($t0)
+	addi $t1 $t1 804
+	addu $t1 $t1 $t0
+	lw $t1 0($t1)
+	sw $t1 1772($t0)
+	lw $t1 1772($t0)
+	sw $t1 8($sp)
+	li $t1 4
+	sw $t1 1776($t0)
+	lw $t1 1776($t0)
+	addi $t1 $t1 804
+	addu $t1 $t1 $t0
+	lw $t1 0($t1)
+	sw $t1 1780($t0)
+	lw $t1 1780($t0)
+	sw $t1 4($sp)
+	sw $ra 0($sp)
+	addi $sp $sp -16
+	lw $t1 1768($t0)
+	sw $t1 0($sp)
+	lw $t1 1772($t0)
+	sw $t1 4($sp)
+	lw $t1 1776($t0)
+	sw $t1 8($sp)
+	lw $t1 1780($t0)
+	sw $t1 12($sp)
+	lw $t1 24($sp)
+	sw $t1 1784($t0)
+	lw $t1 20($sp)
+	sw $t1 1788($t0)
+	addi $sp $sp -8
+	lw $t1 1784($t0)
+	sw $t1 0($sp)
+	lw $t1 1788($t0)
+	sw $t1 4($sp)
+	jal min
+	sw $v0 1792($t0)
+	addi $sp $sp 8
+	lw $t1 0($sp)
+	sw $t1 1768($t0)
+	lw $t1 4($sp)
+	sw $t1 1772($t0)
+	lw $t1 8($sp)
+	sw $t1 1776($t0)
+	lw $t1 12($sp)
+	sw $t1 1780($t0)
+	addi $sp $sp 16
+	lw $ra 0($sp)
+	lw $t1 1792($t0)
+	sw $t1 16($sp)
+	sw $ra 0($sp)
+	addi $sp $sp -28
+	lw $t1 1768($t0)
+	sw $t1 0($sp)
+	lw $t1 1772($t0)
+	sw $t1 4($sp)
+	lw $t1 1776($t0)
+	sw $t1 8($sp)
+	lw $t1 1780($t0)
+	sw $t1 12($sp)
+	lw $t1 1784($t0)
+	sw $t1 16($sp)
+	lw $t1 1788($t0)
+	sw $t1 20($sp)
+	lw $t1 1792($t0)
+	sw $t1 24($sp)
+	lw $t1 36($sp)
+	sw $t1 1796($t0)
+	lw $t1 32($sp)
+	sw $t1 1800($t0)
+	addi $sp $sp -8
+	lw $t1 1796($t0)
+	sw $t1 0($sp)
+	lw $t1 1800($t0)
+	sw $t1 4($sp)
+	jal max
+	sw $v0 1804($t0)
+	addi $sp $sp 8
+	lw $t1 0($sp)
+	sw $t1 1768($t0)
+	lw $t1 4($sp)
+	sw $t1 1772($t0)
+	lw $t1 8($sp)
+	sw $t1 1776($t0)
+	lw $t1 12($sp)
+	sw $t1 1780($t0)
+	lw $t1 16($sp)
+	sw $t1 1784($t0)
+	lw $t1 20($sp)
+	sw $t1 1788($t0)
+	lw $t1 24($sp)
+	sw $t1 1792($t0)
+	addi $sp $sp 28
+	lw $ra 0($sp)
+	lw $t1 1804($t0)
+	sw $t1 20($sp)
+	sw $ra 0($sp)
+	addi $sp $sp -40
+	lw $t1 1768($t0)
+	sw $t1 0($sp)
+	lw $t1 1772($t0)
+	sw $t1 4($sp)
+	lw $t1 1776($t0)
+	sw $t1 8($sp)
+	lw $t1 1780($t0)
+	sw $t1 12($sp)
+	lw $t1 1784($t0)
+	sw $t1 16($sp)
+	lw $t1 1788($t0)
+	sw $t1 20($sp)
+	lw $t1 1792($t0)
+	sw $t1 24($sp)
+	lw $t1 1796($t0)
+	sw $t1 28($sp)
+	lw $t1 1800($t0)
+	sw $t1 32($sp)
+	lw $t1 1804($t0)
+	sw $t1 36($sp)
+	jal compare
+	sw $v0 1808($t0)
+	lw $t1 0($sp)
+	sw $t1 1768($t0)
+	lw $t1 4($sp)
+	sw $t1 1772($t0)
+	lw $t1 8($sp)
+	sw $t1 1776($t0)
+	lw $t1 12($sp)
+	sw $t1 1780($t0)
+	lw $t1 16($sp)
+	sw $t1 1784($t0)
+	lw $t1 20($sp)
+	sw $t1 1788($t0)
+	lw $t1 24($sp)
+	sw $t1 1792($t0)
+	lw $t1 28($sp)
+	sw $t1 1796($t0)
+	lw $t1 32($sp)
+	sw $t1 1800($t0)
+	lw $t1 36($sp)
+	sw $t1 1804($t0)
+	addi $sp $sp 40
+	lw $ra 0($sp)
+	lw $t1 1808($t0)
+	blt $t1 0 label15
+	li $t1 0
+	sw $t1 12($sp)
+	li $t1 0
+	sw $t1 24($sp)
+label16 :
+	lw $t1 24($sp)
+	sw $t1 1812($t0)
+	lw $t1 8($sp)
+	sw $t1 1816($t0)
+	lw $t1 1812($t0)
+	lw $t2 1816($t0)
+	bge $t1 $t2 label17
+	lw $t1 24($sp)
+	sw $t1 1820($t0)
+	li $t1 0
+	sw $t1 1824($t0)
+	lw $t1 8($sp)
+	sw $t1 1828($t0)
+	lw $t1 1828($t0)
+	addiu $t1 $t1 -1
+	sw $t1 1832($t0)
+	lw $t1 24($sp)
+	sw $t1 1840($t0)
+	lw $t1 1832($t0)
+	lw $t2 1840($t0)
+	sub $t1 $t1 $t2
+	sw $t1 1836($t0)
+	lw $t1 1824($t0)
+	mul $t1 $t1 100
+	sw $t1 1824($t0)
+	lw $t1 1836($t0)
+	sll $t1 $t1 2
+	sw $t1 1844($t0)
+	lw $t1 1824($t0)
+	lw $t2 1844($t0)
+	addu $t1 $t1 $t2
+	sw $t1 1824($t0)
+	lw $t1 1824($t0)
+	addi $t1 $t1 4
+	addu $t1 $t1 $t0
+	lw $t1 0($t1)
+	sw $t1 1848($t0)
+	lw $t1 1820($t0)
+	sll $t1 $t1 2
+	sw $t1 1852($t0)
+	lw $t1 1852($t0)
+	addiu $t1 $t1 828
+	sw $t1 1852($t0)
+	lw $t1 1848($t0)
+	lw $t2 1852($t0)
+	addu $t2 $t2 $sp
+	sw $t1 0($t2)
+	lw $t1 24($sp)
+	sw $t1 1856($t0)
+	lw $t1 1856($t0)
+	addiu $t1 $t1 1
+	sw $t1 1860($t0)
+	lw $t1 1860($t0)
+	sw $t1 24($sp)
+	j label16
+label17 :
+	li $t1 0
+	sw $t1 24($sp)
+label18 :
+	lw $t1 24($sp)
+	sw $t1 1864($t0)
+	lw $t1 4($sp)
+	sw $t1 1868($t0)
+	lw $t1 1864($t0)
+	lw $t2 1868($t0)
+	bge $t1 $t2 label19
+	lw $t1 24($sp)
+	sw $t1 1872($t0)
+	li $t1 4
+	sw $t1 1876($t0)
+	lw $t1 4($sp)
+	sw $t1 1880($t0)
+	lw $t1 1880($t0)
+	addiu $t1 $t1 -1
+	sw $t1 1884($t0)
+	lw $t1 24($sp)
+	sw $t1 1892($t0)
+	lw $t1 1884($t0)
+	lw $t2 1892($t0)
+	sub $t1 $t1 $t2
+	sw $t1 1888($t0)
+	lw $t1 1876($t0)
+	mul $t1 $t1 100
+	sw $t1 1876($t0)
+	lw $t1 1888($t0)
+	sll $t1 $t1 2
+	sw $t1 1896($t0)
+	lw $t1 1876($t0)
+	lw $t2 1896($t0)
+	addu $t1 $t1 $t2
+	sw $t1 1876($t0)
+	lw $t1 1876($t0)
+	addi $t1 $t1 4
+	addu $t1 $t1 $t0
+	lw $t1 0($t1)
+	sw $t1 1900($t0)
+	lw $t1 1872($t0)
+	sll $t1 $t1 2
+	sw $t1 1904($t0)
+	lw $t1 1904($t0)
+	addiu $t1 $t1 428
+	sw $t1 1904($t0)
+	lw $t1 1900($t0)
+	lw $t2 1904($t0)
+	addu $t2 $t2 $sp
+	sw $t1 0($t2)
+	lw $t1 24($sp)
+	sw $t1 1908($t0)
+	lw $t1 1908($t0)
+	addiu $t1 $t1 1
+	sw $t1 1912($t0)
+	lw $t1 1912($t0)
+	sw $t1 24($sp)
+	j label18
+label19 :
+	j label20
+label15 :
+	li $t1 1
+	sw $t1 12($sp)
+	li $t1 0
+	sw $t1 24($sp)
+label21 :
+	lw $t1 24($sp)
+	sw $t1 1916($t0)
+	lw $t1 4($sp)
+	sw $t1 1920($t0)
+	lw $t1 1916($t0)
+	lw $t2 1920($t0)
+	bge $t1 $t2 label22
+	lw $t1 24($sp)
+	sw $t1 1924($t0)
+	li $t1 4
+	sw $t1 1928($t0)
+	lw $t1 4($sp)
+	sw $t1 1932($t0)
+	lw $t1 1932($t0)
+	addiu $t1 $t1 -1
+	sw $t1 1936($t0)
+	lw $t1 24($sp)
+	sw $t1 1944($t0)
+	lw $t1 1936($t0)
+	lw $t2 1944($t0)
+	sub $t1 $t1 $t2
+	sw $t1 1940($t0)
+	lw $t1 1928($t0)
+	mul $t1 $t1 100
+	sw $t1 1928($t0)
+	lw $t1 1940($t0)
+	sll $t1 $t1 2
+	sw $t1 1948($t0)
+	lw $t1 1928($t0)
+	lw $t2 1948($t0)
+	addu $t1 $t1 $t2
+	sw $t1 1928($t0)
+	lw $t1 1928($t0)
+	addi $t1 $t1 4
+	addu $t1 $t1 $t0
+	lw $t1 0($t1)
+	sw $t1 1952($t0)
+	lw $t1 1924($t0)
+	sll $t1 $t1 2
+	sw $t1 1956($t0)
+	lw $t1 1956($t0)
+	addiu $t1 $t1 828
+	sw $t1 1956($t0)
+	lw $t1 1952($t0)
+	lw $t2 1956($t0)
+	addu $t2 $t2 $sp
+	sw $t1 0($t2)
+	lw $t1 24($sp)
+	sw $t1 1960($t0)
+	lw $t1 1960($t0)
+	addiu $t1 $t1 1
+	sw $t1 1964($t0)
+	lw $t1 1964($t0)
+	sw $t1 24($sp)
+	j label21
+label22 :
+	li $t1 0
+	sw $t1 24($sp)
+label23 :
+	lw $t1 24($sp)
+	sw $t1 1968($t0)
+	lw $t1 8($sp)
+	sw $t1 1972($t0)
+	lw $t1 1968($t0)
+	lw $t2 1972($t0)
+	bge $t1 $t2 label24
+	lw $t1 24($sp)
+	sw $t1 1976($t0)
+	li $t1 0
+	sw $t1 1980($t0)
+	lw $t1 8($sp)
+	sw $t1 1984($t0)
+	lw $t1 1984($t0)
+	addiu $t1 $t1 -1
+	sw $t1 1988($t0)
+	lw $t1 24($sp)
+	sw $t1 1996($t0)
+	lw $t1 1988($t0)
+	lw $t2 1996($t0)
+	sub $t1 $t1 $t2
+	sw $t1 1992($t0)
+	lw $t1 1980($t0)
+	mul $t1 $t1 100
+	sw $t1 1980($t0)
+	lw $t1 1992($t0)
+	sll $t1 $t1 2
+	sw $t1 2000($t0)
+	lw $t1 1980($t0)
+	lw $t2 2000($t0)
+	addu $t1 $t1 $t2
+	sw $t1 1980($t0)
+	lw $t1 1980($t0)
+	addi $t1 $t1 4
+	addu $t1 $t1 $t0
+	lw $t1 0($t1)
+	sw $t1 2004($t0)
+	lw $t1 1976($t0)
+	sll $t1 $t1 2
+	sw $t1 2008($t0)
+	lw $t1 2008($t0)
+	addiu $t1 $t1 428
+	sw $t1 2008($t0)
+	lw $t1 2004($t0)
+	lw $t2 2008($t0)
+	addu $t2 $t2 $sp
+	sw $t1 0($t2)
+	lw $t1 24($sp)
+	sw $t1 2012($t0)
+	lw $t1 2012($t0)
+	addiu $t1 $t1 1
+	sw $t1 2016($t0)
+	lw $t1 2016($t0)
+	sw $t1 24($sp)
+	j label23
+label24 :
+label20 :
+	li $t1 0
+	sw $t1 24($sp)
+label25 :
+	lw $t1 24($sp)
+	sw $t1 2020($t0)
+	lw $t1 16($sp)
+	sw $t1 2024($t0)
+	lw $t1 2020($t0)
+	lw $t2 2024($t0)
+	bge $t1 $t2 label26
+	lw $t1 24($sp)
+	sw $t1 2028($t0)
+	lw $t1 2028($t0)
+	sll $t1 $t1 2
+	sw $t1 2032($t0)
+	lw $t1 2032($t0)
+	addiu $t1 $t1 828
+	sw $t1 2032($t0)
+	lw $t1 2032($t0)
+	addu $t1 $t1 $sp
+	lw $t1 0($t1)
+	sw $t1 2036($t0)
+	lw $t1 24($sp)
+	sw $t1 2040($t0)
+	lw $t1 2040($t0)
+	sll $t1 $t1 2
+	sw $t1 2044($t0)
+	lw $t1 2044($t0)
+	addiu $t1 $t1 428
+	sw $t1 2044($t0)
+	lw $t1 2044($t0)
+	addu $t1 $t1 $sp
+	lw $t1 0($t1)
+	sw $t1 2048($t0)
+	lw $t1 2036($t0)
+	lw $t2 2048($t0)
+	blt $t1 $t2 label27
+	lw $t1 24($sp)
+	sw $t1 2052($t0)
+	lw $t1 24($sp)
+	sw $t1 2056($t0)
+	lw $t1 2056($t0)
+	sll $t1 $t1 2
+	sw $t1 2060($t0)
+	lw $t1 2060($t0)
+	addiu $t1 $t1 828
+	sw $t1 2060($t0)
+	lw $t1 2060($t0)
+	addu $t1 $t1 $sp
+	lw $t1 0($t1)
+	sw $t1 2064($t0)
+	lw $t1 24($sp)
+	sw $t1 2072($t0)
+	lw $t1 2072($t0)
+	sll $t1 $t1 2
+	sw $t1 2076($t0)
+	lw $t1 2076($t0)
+	addiu $t1 $t1 428
+	sw $t1 2076($t0)
+	lw $t1 2076($t0)
+	addu $t1 $t1 $sp
+	lw $t1 0($t1)
+	sw $t1 2080($t0)
+	lw $t1 2064($t0)
+	lw $t2 2080($t0)
+	sub $t1 $t1 $t2
+	sw $t1 2068($t0)
+	lw $t1 2052($t0)
+	sll $t1 $t1 2
+	sw $t1 2084($t0)
+	lw $t1 2084($t0)
+	addiu $t1 $t1 28
+	sw $t1 2084($t0)
+	lw $t1 2068($t0)
+	lw $t2 2084($t0)
+	addu $t2 $t2 $sp
+	sw $t1 0($t2)
+	j label28
+label27 :
+	lw $t1 24($sp)
+	sw $t1 2088($t0)
+	lw $t1 24($sp)
+	sw $t1 2092($t0)
+	lw $t1 2092($t0)
+	sll $t1 $t1 2
+	sw $t1 2096($t0)
+	lw $t1 2096($t0)
+	addiu $t1 $t1 828
+	sw $t1 2096($t0)
+	lw $t1 2096($t0)
+	addu $t1 $t1 $sp
+	lw $t1 0($t1)
+	sw $t1 2100($t0)
+	lw $t1 2100($t0)
+	addiu $t1 $t1 10
+	sw $t1 2104($t0)
+	lw $t1 24($sp)
+	sw $t1 2112($t0)
+	lw $t1 2112($t0)
+	sll $t1 $t1 2
+	sw $t1 2116($t0)
+	lw $t1 2116($t0)
+	addiu $t1 $t1 428
+	sw $t1 2116($t0)
+	lw $t1 2116($t0)
+	addu $t1 $t1 $sp
+	lw $t1 0($t1)
+	sw $t1 2120($t0)
+	lw $t1 2104($t0)
+	lw $t2 2120($t0)
+	sub $t1 $t1 $t2
+	sw $t1 2108($t0)
+	lw $t1 2088($t0)
+	sll $t1 $t1 2
+	sw $t1 2124($t0)
+	lw $t1 2124($t0)
+	addiu $t1 $t1 28
+	sw $t1 2124($t0)
+	lw $t1 2108($t0)
+	lw $t2 2124($t0)
+	addu $t2 $t2 $sp
+	sw $t1 0($t2)
+	lw $t1 24($sp)
+	sw $t1 2128($t0)
+	lw $t1 2128($t0)
+	addiu $t1 $t1 1
+	sw $t1 2132($t0)
+	lw $t1 24($sp)
+	sw $t1 2136($t0)
+	lw $t1 2136($t0)
+	addiu $t1 $t1 1
+	sw $t1 2140($t0)
+	lw $t1 2140($t0)
+	sll $t1 $t1 2
+	sw $t1 2144($t0)
+	lw $t1 2144($t0)
+	addiu $t1 $t1 828
+	sw $t1 2144($t0)
+	lw $t1 2144($t0)
+	addu $t1 $t1 $sp
+	lw $t1 0($t1)
+	sw $t1 2148($t0)
+	lw $t1 2148($t0)
+	addiu $t1 $t1 -1
+	sw $t1 2152($t0)
+	lw $t1 2132($t0)
+	sll $t1 $t1 2
+	sw $t1 2156($t0)
+	lw $t1 2156($t0)
+	addiu $t1 $t1 828
+	sw $t1 2156($t0)
+	lw $t1 2152($t0)
+	lw $t2 2156($t0)
+	addu $t2 $t2 $sp
+	sw $t1 0($t2)
+label28 :
+	lw $t1 24($sp)
+	sw $t1 2160($t0)
+	lw $t1 2160($t0)
+	addiu $t1 $t1 1
+	sw $t1 2164($t0)
+	lw $t1 2164($t0)
+	sw $t1 24($sp)
+	j label25
+label26 :
+label29 :
+	lw $t1 24($sp)
+	sw $t1 2168($t0)
+	lw $t1 20($sp)
+	sw $t1 2172($t0)
+	lw $t1 2168($t0)
+	lw $t2 2172($t0)
+	bge $t1 $t2 label30
+	lw $t1 24($sp)
+	sw $t1 2176($t0)
+	lw $t1 2176($t0)
+	sll $t1 $t1 2
+	sw $t1 2180($t0)
+	lw $t1 2180($t0)
+	addiu $t1 $t1 828
+	sw $t1 2180($t0)
+	lw $t1 2180($t0)
+	addu $t1 $t1 $sp
+	lw $t1 0($t1)
+	sw $t1 2184($t0)
+	lw $t1 2184($t0)
+	blt $t1 0 label31
+	lw $t1 24($sp)
+	sw $t1 2188($t0)
+	lw $t1 24($sp)
+	sw $t1 2192($t0)
+	lw $t1 2192($t0)
+	sll $t1 $t1 2
+	sw $t1 2196($t0)
+	lw $t1 2196($t0)
+	addiu $t1 $t1 828
+	sw $t1 2196($t0)
+	lw $t1 2196($t0)
+	addu $t1 $t1 $sp
+	lw $t1 0($t1)
+	sw $t1 2200($t0)
+	lw $t1 2188($t0)
+	sll $t1 $t1 2
+	sw $t1 2204($t0)
+	lw $t1 2204($t0)
+	addiu $t1 $t1 28
+	sw $t1 2204($t0)
+	lw $t1 2200($t0)
+	lw $t2 2204($t0)
+	addu $t2 $t2 $sp
+	sw $t1 0($t2)
+	j label32
+label31 :
+	lw $t1 24($sp)
+	sw $t1 2208($t0)
+	lw $t1 24($sp)
+	sw $t1 2212($t0)
+	lw $t1 2212($t0)
+	sll $t1 $t1 2
+	sw $t1 2216($t0)
+	lw $t1 2216($t0)
+	addiu $t1 $t1 828
+	sw $t1 2216($t0)
+	lw $t1 2216($t0)
+	addu $t1 $t1 $sp
+	lw $t1 0($t1)
+	sw $t1 2220($t0)
+	lw $t1 2220($t0)
+	addiu $t1 $t1 10
+	sw $t1 2224($t0)
+	lw $t1 2208($t0)
+	sll $t1 $t1 2
+	sw $t1 2228($t0)
+	lw $t1 2228($t0)
+	addiu $t1 $t1 28
+	sw $t1 2228($t0)
+	lw $t1 2224($t0)
+	lw $t2 2228($t0)
+	addu $t2 $t2 $sp
+	sw $t1 0($t2)
+	lw $t1 24($sp)
+	sw $t1 2232($t0)
+	lw $t1 2232($t0)
+	addiu $t1 $t1 1
+	sw $t1 2236($t0)
+	lw $t1 24($sp)
+	sw $t1 2240($t0)
+	lw $t1 2240($t0)
+	addiu $t1 $t1 1
+	sw $t1 2244($t0)
+	lw $t1 2244($t0)
+	sll $t1 $t1 2
+	sw $t1 2248($t0)
+	lw $t1 2248($t0)
+	addiu $t1 $t1 828
+	sw $t1 2248($t0)
+	lw $t1 2248($t0)
+	addu $t1 $t1 $sp
+	lw $t1 0($t1)
+	sw $t1 2252($t0)
+	lw $t1 2252($t0)
+	addiu $t1 $t1 -1
+	sw $t1 2256($t0)
+	lw $t1 2236($t0)
+	sll $t1 $t1 2
+	sw $t1 2260($t0)
+	lw $t1 2260($t0)
+	addiu $t1 $t1 828
+	sw $t1 2260($t0)
+	lw $t1 2256($t0)
+	lw $t2 2260($t0)
+	addu $t2 $t2 $sp
+	sw $t1 0($t2)
+label32 :
+	lw $t1 24($sp)
+	sw $t1 2264($t0)
+	lw $t1 2264($t0)
+	addiu $t1 $t1 1
+	sw $t1 2268($t0)
+	lw $t1 2268($t0)
+	sw $t1 24($sp)
+	j label29
+label30 :
+label33 :
+	lw $t1 24($sp)
+	sw $t1 2272($t0)
+	lw $t1 2272($t0)
+	addiu $t1 $t1 -1
+	sw $t1 2276($t0)
+	lw $t1 2276($t0)
+	sll $t1 $t1 2
+	sw $t1 2280($t0)
+	lw $t1 2280($t0)
+	addiu $t1 $t1 28
+	sw $t1 2280($t0)
+	lw $t1 2280($t0)
+	addu $t1 $t1 $sp
+	lw $t1 0($t1)
+	sw $t1 2284($t0)
+	lw $t1 2284($t0)
+	bne $t1 0 label34
+	lw $t1 24($sp)
+	sw $t1 2288($t0)
+	lw $t1 2288($t0)
+	addiu $t1 $t1 -1
+	sw $t1 2292($t0)
+	lw $t1 2292($t0)
+	sw $t1 24($sp)
+	j label33
+label34 :
+	li $t1 0
+	sw $t1 20($sp)
+	lw $t1 12($sp)
+	sw $t1 2296($t0)
+	lw $t1 2296($t0)
+	bne $t1 1 label35
+	li $v0 4
+	la $a0 str1
+	syscall
+	li $v0 11
+	li $a0 '\n'
+	syscall
+label35 :
+	lw $t1 24($sp)
+	sw $t1 2300($t0)
+	lw $t1 2300($t0)
+	addiu $t1 $t1 -1
+	sw $t1 2304($t0)
+	lw $t1 2304($t0)
+	sw $t1 16($sp)
+label37 :
+	lw $t1 16($sp)
+	sw $t1 2308($t0)
+	li $t1 -1
+	sw $t1 2312($t0)
+	lw $t1 2308($t0)
+	lw $t2 2312($t0)
+	ble $t1 $t2 label38
+	lw $t1 20($sp)
+	sw $t1 2316($t0)
+	lw $t1 16($sp)
+	sw $t1 2320($t0)
+	lw $t1 2320($t0)
+	sll $t1 $t1 2
+	sw $t1 2324($t0)
+	lw $t1 2324($t0)
+	addiu $t1 $t1 28
+	sw $t1 2324($t0)
+	lw $t1 2324($t0)
+	addu $t1 $t1 $sp
+	lw $t1 0($t1)
+	sw $t1 2328($t0)
+	lw $t1 2316($t0)
+	sll $t1 $t1 2
+	sw $t1 2332($t0)
+	lw $t1 2328($t0)
+	lw $t2 2332($t0)
+	addi $t2 $t2 812
+	addu $t2 $t2 $t0
+	sw $t1 0($t2)
+	lw $t1 16($sp)
+	sw $t1 2336($t0)
+	lw $t1 2336($t0)
+	addiu $t1 $t1 -1
+	sw $t1 2340($t0)
+	lw $t1 2340($t0)
+	sw $t1 16($sp)
+	lw $t1 20($sp)
+	sw $t1 2344($t0)
+	lw $t1 2344($t0)
+	addiu $t1 $t1 1
+	sw $t1 2348($t0)
+	lw $t1 2348($t0)
+	sw $t1 20($sp)
+	j label37
+label38 :
+	lw $t1 20($sp)
+	sw $t1 2352($t0)
+	lw $v0 2352($t0)
+	j ENDsubtract
+ENDsubtract :
+	lw $ra 0($sp)
+	addi $sp $sp 1228
+	jr $ra
+main :
+	li $t1 0
+	sw $t1 2360($t0)
+	li $v0 5
+	syscall
+	sw $v0 2356($t0)
+	li $t1 0
+	sw $t1 2368($t0)
+	lw $t1 2356($t0)
+	lw $t2 2368($t0)
+	addi $t2 $t2 804
+	addu $t2 $t2 $t0
+	sw $t1 0($t2)
+label39 :
+	lw $t1 2360($t0)
+	lw $t2 2356($t0)
+	bge $t1 $t2 label40
+	li $v0 5
+	syscall
+	sw $v0 2364($t0)
+	li $t1 0
+	sw $t1 2372($t0)
+	lw $t1 2360($t0)
+	sll $t1 $t1 2
+	sw $t1 2376($t0)
+	lw $t1 2372($t0)
+	mul $t1 $t1 100
+	sw $t1 2372($t0)
+	lw $t1 2372($t0)
+	lw $t2 2376($t0)
+	addu $t1 $t1 $t2
+	sw $t1 2372($t0)
+	lw $t1 2364($t0)
+	lw $t2 2372($t0)
+	addi $t2 $t2 4
+	addu $t2 $t2 $t0
+	sw $t1 0($t2)
+	lw $t1 2360($t0)
+	addiu $t1 $t1 1
+	sw $t1 2380($t0)
+	lw $t1 2380($t0)
+	sw $t1 2360($t0)
+	j label39
+label40 :
+	li $v0 5
+	syscall
+	sw $v0 2356($t0)
+	li $t1 4
+	sw $t1 2384($t0)
+	lw $t1 2356($t0)
+	lw $t2 2384($t0)
+	addi $t2 $t2 804
+	addu $t2 $t2 $t0
+	sw $t1 0($t2)
+	li $t1 0
+	sw $t1 2360($t0)
+label41 :
+	lw $t1 2360($t0)
+	lw $t2 2356($t0)
+	bge $t1 $t2 label42
+	li $v0 5
+	syscall
+	sw $v0 2364($t0)
+	li $t1 4
+	sw $t1 2388($t0)
+	lw $t1 2360($t0)
+	sll $t1 $t1 2
+	sw $t1 2392($t0)
+	lw $t1 2388($t0)
+	mul $t1 $t1 100
+	sw $t1 2388($t0)
+	lw $t1 2388($t0)
+	lw $t2 2392($t0)
+	addu $t1 $t1 $t2
+	sw $t1 2388($t0)
+	lw $t1 2364($t0)
+	lw $t2 2388($t0)
+	addi $t2 $t2 4
+	addu $t2 $t2 $t0
+	sw $t1 0($t2)
+	lw $t1 2360($t0)
+	addiu $t1 $t1 1
+	sw $t1 2396($t0)
+	lw $t1 2396($t0)
+	sw $t1 2360($t0)
+	j label41
+label42 :
+	li $t1 0
+	sw $t1 2360($t0)
+	jal subtract
+	sw $v0 2400($t0)
+	lw $t1 2400($t0)
+	sw $t1 2356($t0)
+label43 :
+	lw $t1 2360($t0)
+	lw $t2 2356($t0)
+	bge $t1 $t2 label44
+	lw $t1 2360($t0)
+	sll $t1 $t1 2
+	sw $t1 2404($t0)
+	lw $t1 2404($t0)
+	addi $t1 $t1 812
+	addu $t1 $t1 $t0
+	lw $t1 0($t1)
+	sw $t1 2408($t0)
+	li $v0 1
+	lw $a0 2408($t0)
+	syscall
+	li $v0 11
+	li $a0 '\n'
+	syscall
+	lw $t1 2360($t0)
+	addiu $t1 $t1 1
+	sw $t1 2412($t0)
+	lw $t1 2412($t0)
+	sw $t1 2360($t0)
+	j label43
+label44 :
+	j EndMain
+EndMain :

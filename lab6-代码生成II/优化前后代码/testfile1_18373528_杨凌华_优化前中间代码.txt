@@ -1,0 +1,369 @@
+[ans]	[x]	[op]	[y]
+19971231	seed	ARRSETbyCONST	0
+19981013	seed	ARRSETbyCONST	4
+1000000007	seed	ARRSETbyCONST	8
+staticvalue	0		
+main		j	
+myscanf		:	
+	4	spAlloc	VarDef
+	4	spAlloc	(Ra)
+		raPush	
+	INT	ReadByType	
+$v0	4	spSET$v0	n
+~t1	4	spGET	
+~t1		return	
+ENDmyscanf		j	
+ENDmyscanf		:	
+		raPop	
+	8	spFree	
+		jr	
+myprintf		:	
+	4	spAlloc	(Ra)
+		raPush	
+~t2	4	spGET	
+		print	~t2
+ENDmyprintf		j	
+ENDmyprintf		:	
+		raPop	
+	4	spFree	
+		jr	
+set		:	
+	124	spAlloc	VarDef
+	4	spAlloc	VarDef
+10	0	spSET	
+	4	spAlloc	VarDef
+0	0	spSET	
+	4	spAlloc	(Ra)
+		raPush	
+~t3	0	*	4
+~t3	~t3	+	12
+1	~t3	spARRSET	
+~t4	0	*	4
+~t4	~t4	+	12
+~t5	~t4	spARRGET	
+~t6	~t5	*	2
+~t7	1	*	4
+~t7	~t7	+	12
+~t6	~t7	spARRSET	
+~t8	1	*	4
+~t8	~t8	+	12
+~t9	~t8	spARRGET	
+~t10	~t9	*	2
+~t11	2	*	4
+~t11	~t11	+	12
+~t10	~t11	spARRSET	
+~t12	2	*	4
+~t12	~t12	+	12
+~t13	~t12	spARRGET	
+~t14	~t13	*	2
+~t15	3	*	4
+~t15	~t15	+	12
+~t14	~t15	spARRSET	
+~t16	3	*	4
+~t16	~t16	+	12
+~t17	~t16	spARRGET	
+~t18	~t17	*	2
+~t19	4	*	4
+~t19	~t19	+	12
+~t18	~t19	spARRSET	
+~t20	4	*	4
+~t20	~t20	+	12
+~t21	~t20	spARRGET	
+~t22	~t21	*	2
+~t23	5	*	4
+~t23	~t23	+	12
+~t22	~t23	spARRSET	
+~t24	5	*	4
+~t24	~t24	+	12
+~t25	~t24	spARRGET	
+~t26	~t25	*	2
+~t27	6	*	4
+~t27	~t27	+	12
+~t26	~t27	spARRSET	
+~t28	6	*	4
+~t28	~t28	+	12
+~t29	~t28	spARRGET	
+~t30	~t29	*	2
+~t31	7	*	4
+~t31	~t31	+	12
+~t30	~t31	spARRSET	
+~t32	7	*	4
+~t32	~t32	+	12
+~t33	~t32	spARRGET	
+~t34	~t33	*	2
+~t35	8	*	4
+~t35	~t35	+	12
+~t34	~t35	spARRSET	
+~t36	8	*	4
+~t36	~t36	+	12
+~t37	~t36	spARRGET	
+~t38	~t37	*	2
+~t39	9	*	4
+~t39	~t39	+	12
+~t38	~t39	spARRSET	
+~t40	9	*	4
+~t40	~t40	+	12
+~t41	~t40	spARRGET	
+~t42	~t41	*	2
+~t43	10	*	4
+~t43	~t43	+	12
+~t42	~t43	spARRSET	
+label1		:	
+~t44	8	spGET	
+label2	~t44	>=	30
+~t45	8	spGET	
+~t46	~t45	+	1
+~t46	8	spSET	
+~t47	8	spGET	
+~t48	8	spGET	
+~t49	~t48	-	1
+~t50	~t49	*	4
+~t50	~t50	+	12
+~t51	~t50	spARRGET	
+~t52	~t51	*	2
+~t53	~t47	*	4
+~t53	~t53	+	12
+~t52	~t53	spARRSET	
+label1		j	
+label2		:	
+~t54	136	spGET	
+~t55	~t54	/	30
+label3	~t55	<	1000
+0		return	
+ENDset		j	
+label3		:	
+~t56	136	spGET	
+~t57	~t56	/	30
+~t58	~t57	*	4
+~t59	a	ARRGET	~t58
+~t61	136	spGET	
+~t63	136	spGET	
+~t64	~t63	/	30
+~t65	~t64	*	30
+~t62	~t61	-	~t65
+~t66	~t62	*	4
+~t66	~t66	+	12
+~t67	~t66	spARRGET	
+~t60	~t59	/	~t67
+~t69	136	spGET	
+~t70	~t69	/	30
+~t71	~t70	*	4
+~t72	a	ARRGET	~t71
+~t74	136	spGET	
+~t76	136	spGET	
+~t77	~t76	/	30
+~t78	~t77	*	30
+~t75	~t74	-	~t78
+~t79	~t75	*	4
+~t79	~t79	+	12
+~t80	~t79	spARRGET	
+~t73	~t72	/	~t80
+~t81	~t73	/	2
+~t82	~t81	*	2
+~t68	~t60	-	~t82
+~t83	140	spGET	
+label5	~t68	==	~t83
+~t84	136	spGET	
+~t85	~t84	/	30
+~t86	~t85	*	4
+~t87	a	ARRGET	~t86
+~t89	136	spGET	
+~t91	136	spGET	
+~t92	~t91	/	30
+~t93	~t92	*	30
+~t90	~t89	-	~t93
+~t94	~t90	*	4
+~t94	~t94	+	12
+~t95	~t94	spARRGET	
+~t88	~t87	/	~t95
+~t97	136	spGET	
+~t98	~t97	/	30
+~t99	~t98	*	4
+~t100	a	ARRGET	~t99
+~t102	136	spGET	
+~t104	136	spGET	
+~t105	~t104	/	30
+~t106	~t105	*	30
+~t103	~t102	-	~t106
+~t107	~t103	*	4
+~t107	~t107	+	12
+~t108	~t107	spARRGET	
+~t101	~t100	/	~t108
+~t109	~t101	/	2
+~t110	~t109	*	2
+~t96	~t88	-	~t110
+label6	~t96	!=	0
+~t111	140	spGET	
+label7	~t111	!=	1
+~t112	136	spGET	
+~t114	136	spGET	
+~t115	~t114	/	30
+~t116	~t115	*	30
+~t113	~t112	-	~t116
+~t117	~t113	*	4
+~t117	~t117	+	12
+~t118	~t117	spARRGET	
+~t118	4	spSET	
+label7		:	
+label6		:	
+~t119	136	spGET	
+~t120	~t119	/	30
+~t121	~t120	*	4
+~t122	a	ARRGET	~t121
+~t124	136	spGET	
+~t126	136	spGET	
+~t127	~t126	/	30
+~t128	~t127	*	30
+~t125	~t124	-	~t128
+~t129	~t125	*	4
+~t129	~t129	+	12
+~t130	~t129	spARRGET	
+~t123	~t122	/	~t130
+~t132	136	spGET	
+~t133	~t132	/	30
+~t134	~t133	*	4
+~t135	a	ARRGET	~t134
+~t137	136	spGET	
+~t139	136	spGET	
+~t140	~t139	/	30
+~t141	~t140	*	30
+~t138	~t137	-	~t141
+~t142	~t138	*	4
+~t142	~t142	+	12
+~t143	~t142	spARRGET	
+~t136	~t135	/	~t143
+~t144	~t136	/	2
+~t145	~t144	*	2
+~t131	~t123	-	~t145
+label10	~t131	!=	1
+~t146	140	spGET	
+label11	~t146	!=	0
+~t147	4	spGET	
+~t149	136	spGET	
+~t151	136	spGET	
+~t152	~t151	/	30
+~t153	~t152	*	30
+~t150	~t149	-	~t153
+~t154	~t150	*	4
+~t154	~t154	+	12
+~t155	~t154	spARRGET	
+~t148	~t147	-	~t155
+~t148	4	spSET	
+label11		:	
+label10		:	
+label5		:	
+~t156	136	spGET	
+~t157	~t156	/	30
+~t158	136	spGET	
+~t159	~t158	/	30
+~t160	~t159	*	4
+~t161	a	ARRGET	~t160
+~t163	4	spGET	
+~t162	~t161	+	~t163
+~t164	~t157	*	4
+~t162	a	ARRSETbyVAR	~t164
+0		return	
+ENDset		j	
+ENDset		:	
+		raPop	
+	136	spFree	
+		jr	
+rand		:	
+	4	spAlloc	(Ra)
+		raPush	
+~t166	0	*	4
+~t167	seed	ARRGET	~t166
+~t165	staticvalue	*	~t167
+~t169	1	*	4
+~t170	seed	ARRGET	~t169
+~t168	~t165	+	~t170
+staticvalue	~t168		
+~t173	2	*	4
+~t174	seed	ARRGET	~t173
+~t172	staticvalue	/	~t174
+~t176	2	*	4
+~t177	seed	ARRGET	~t176
+~t175	~t172	*	~t177
+~t171	staticvalue	-	~t175
+staticvalue	~t171		
+label15	staticvalue	>=	0
+~t178	2	*	4
+~t179	seed	ARRGET	~t178
+~t180	~t179	+	staticvalue
+staticvalue	~t180		
+label15		:	
+staticvalue		return	
+ENDrand		j	
+ENDrand		:	
+		raPop	
+	4	spFree	
+		jr	
+main		:	
+tmp	0		
+i	0		
+j	0		
+label17		:	
+label18	j	>=	1000
+~t181	j	*	4
+0	a	ARRSETbyVAR	~t181
+~t182	j	+	1
+j	~t182		
+label17		j	
+label18		:	
+myscanf		jal	
+~t183		$v0	
+n	~t183		
+myscanf		jal	
+~t184		$v0	
+staticvalue	~t184		
+label19		:	
+label20	n	<=	0
+~t185	n	-	1
+n	~t185		
+rand		jal	
+~t186		$v0	
+z	~t186		
+~t188	z	/	300000
+~t189	~t188	*	300000
+~t187	z	-	~t189
+x	~t187		
+rand		jal	
+~t190		$v0	
+z	~t190		
+~t192	z	/	2
+~t193	~t192	*	2
+~t191	z	-	~t193
+y	~t191		
+	8	spAlloc	(ParaSize)
+x	0	spPush	(ParaPush)
+y	4	spPush	(ParaPush)
+set		jal	
+~t194		$v0	
+	8	spFree	
+label19		j	
+label20		:	
+label21		:	
+label22	i	>=	1000
+~t196	i	*	4
+~t197	a	ARRGET	~t196
+~t199	i	*	4
+~t200	a	ARRGET	~t199
+~t201	~t200	/	100000
+~t202	~t201	*	100000
+~t198	~t197	-	~t202
+~t195	tmp	+	~t198
+tmp	~t195		
+~t204	tmp	/	100000
+~t205	~t204	*	100000
+~t203	tmp	-	~t205
+tmp	~t203		
+~t206	i	+	1
+i	~t206		
+label21		j	
+label22		:	
+	4	spAlloc	(ParaSize)
+tmp	0	spPush	(ParaPush)
+myprintf		jal	
+	4	spFree	
+EndMain		j	
+EndMain		:	

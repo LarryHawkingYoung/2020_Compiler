@@ -1,0 +1,77 @@
+.data
+	str0: .asciiz "%d\n"
+	str1: .asciiz "%d\n"
+	str2: .asciiz "%d\n"
+	str3: .asciiz "%d\n"
+.text
+	li	$s0	0x10010000
+	li	$t0	2
+	li	$t1	'b'
+	li	$t2	4
+	li	$t3	'd'
+	li	$t4	0
+	li	$1	'+'
+	mult	$t4	$1
+	mflo	$t5
+	add	$t6	$t5	$t2
+	li	$1	-166
+	mult	$t3	$1
+	mflo	$t7
+	addi	$t8	$t7	3
+	li	$t9	408403
+	sw	$t0	20($s0)
+	add	$t0	$t8	$t9
+	li	$1	'c'
+	sb	$t1	24($s0)
+	lw	$t1	20($s0)
+	div	$1	$t1
+	sw	$t2	28($s0)
+	mflo	$t2
+	sb	$t3	32($s0)
+	sub	$t3	$t0	$t2
+	li	$1	'1'
+	div	$t1	$1
+	sw	$t4	44($s0)
+	mflo	$t4
+	li	$1	'/'
+	div	$t4	$1
+	sw	$t5	48($s0)
+	mflo	$t5
+	li	$1	'j'
+	mult	$t5	$1
+	sw	$t6	52($s0)
+	mflo	$t6
+	sw	$t7	56($s0)
+	add	$t7	$t3	$t6
+	li	$1	12
+	sw	$t8	60($s0)
+	lw	$t8	28($s0)
+	mult	$t8	$1
+	sw	$t9	64($s0)
+	mflo	$t9
+	sw	$t0	68($s0)
+	sub	$t0	$t7	$t9
+	li	$1	1
+	mult	$t0	$1
+	sw	$t1	20($s0)
+	mflo	$t1
+	li	$1	'/'
+	mult	$t1	$1
+	sw	$t2	72($s0)
+	mflo	$t2
+	li	$1	1
+	mult	$t2	$1
+	sw	$t3	76($s0)
+	mflo	$t3
+	sw	$t4	80($s0)
+	lw	$t4	52($s0)
+	sw	$t5	84($s0)
+	add	$t5	$t4	$t3
+	li	$1	-1905437
+	sw	$t6	88($s0)
+	lb	$t6	32($s0)
+	div	$t6	$1
+	sw	$t7	92($s0)
+	mflo	$t7
+	sw	$t8	28($s0)
+	sub	$t8	$t5	$t7

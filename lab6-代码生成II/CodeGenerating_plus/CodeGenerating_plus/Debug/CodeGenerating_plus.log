@@ -1,0 +1,19 @@
+﻿  Application.cpp
+f:\thirdgrade_i\编译技术\实验\lab6-代码生成ii\codegenerating_plus\codegenerating_plus\application.cpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+f:\thirdgrade_i\编译技术\实验\lab6-代码生成ii\codegenerating_plus\codegenerating_plus\application.cpp(129,20): warning C4018: '<': signed/unsigned mismatch
+f:\thirdgrade_i\编译技术\实验\lab6-代码生成ii\codegenerating_plus\codegenerating_plus\application.cpp(138,20): warning C4018: '<': signed/unsigned mismatch
+f:\thirdgrade_i\编译技术\实验\lab6-代码生成ii\codegenerating_plus\codegenerating_plus\application.cpp(147,20): warning C4018: '<': signed/unsigned mismatch
+f:\thirdgrade_i\编译技术\实验\lab6-代码生成ii\codegenerating_plus\codegenerating_plus\application.cpp(158,20): warning C4018: '<': signed/unsigned mismatch
+f:\thirdgrade_i\编译技术\实验\lab6-代码生成ii\codegenerating_plus\codegenerating_plus\application.cpp(217,41): warning C4018: '<': signed/unsigned mismatch
+f:\thirdgrade_i\编译技术\实验\lab6-代码生成ii\codegenerating_plus\codegenerating_plus\application.cpp(443,20): warning C4018: '<': signed/unsigned mismatch
+f:\thirdgrade_i\编译技术\实验\lab6-代码生成ii\codegenerating_plus\codegenerating_plus\application.cpp(1027,11): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+f:\thirdgrade_i\编译技术\实验\lab6-代码生成ii\codegenerating_plus\codegenerating_plus\application.cpp(1539,20): warning C4018: '<': signed/unsigned mismatch
+f:\thirdgrade_i\编译技术\实验\lab6-代码生成ii\codegenerating_plus\codegenerating_plus\application.cpp(2031,20): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+f:\thirdgrade_i\编译技术\实验\lab6-代码生成ii\codegenerating_plus\codegenerating_plus\application.cpp(2355,21): warning C4018: '<': signed/unsigned mismatch
+f:\thirdgrade_i\编译技术\实验\lab6-代码生成ii\codegenerating_plus\codegenerating_plus\application.cpp(2685,6): warning C4101: 'type': unreferenced local variable
+f:\thirdgrade_i\编译技术\实验\lab6-代码生成ii\codegenerating_plus\codegenerating_plus\application.cpp(2708,6): warning C4101: 'type': unreferenced local variable
+f:\thirdgrade_i\编译技术\实验\lab6-代码生成ii\codegenerating_plus\codegenerating_plus\application.cpp(2827,21): warning C4018: '<': signed/unsigned mismatch
+f:\thirdgrade_i\编译技术\实验\lab6-代码生成ii\codegenerating_plus\codegenerating_plus\application.cpp(2829,14): warning C4018: '<': signed/unsigned mismatch
+f:\thirdgrade_i\编译技术\实验\lab6-代码生成ii\codegenerating_plus\codegenerating_plus\application.cpp(3228,5): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+f:\thirdgrade_i\编译技术\实验\lab6-代码生成ii\codegenerating_plus\codegenerating_plus\application.cpp(3717,20): warning C4018: '<': signed/unsigned mismatch
+  CodeGenerating_plus.vcxproj -> F:\ThirdGrade_I\编译技术\实验\lab6-代码生成II\CodeGenerating_plus\Debug\CodeGenerating_plus.exe

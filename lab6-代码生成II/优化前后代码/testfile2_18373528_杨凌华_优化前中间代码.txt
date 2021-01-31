@@ -1,0 +1,500 @@
+[ans]	[x]	[op]	[y]
+main		j	
+min		:	
+	4	spAlloc	(Ra)
+		raPush	
+~t1	4	spGET	
+~t2	8	spGET	
+label1	~t1	<=	~t2
+~t3	8	spGET	
+~t3		return	
+ENDmin		j	
+label2		j	
+label1		:	
+~t4	4	spGET	
+~t4		return	
+ENDmin		j	
+label2		:	
+ENDmin		:	
+		raPop	
+	4	spFree	
+		jr	
+max		:	
+	4	spAlloc	(Ra)
+		raPush	
+~t5	4	spGET	
+~t6	8	spGET	
+label3	~t5	<=	~t6
+~t7	4	spGET	
+~t7		return	
+ENDmax		j	
+label4		j	
+label3		:	
+~t8	8	spGET	
+~t8		return	
+ENDmax		j	
+label4		:	
+ENDmax		:	
+		raPop	
+	4	spFree	
+		jr	
+compare		:	
+	4	spAlloc	VarDef
+0	0	spSET	
+	4	spAlloc	(Ra)
+		raPush	
+~t9	0	*	4
+~t10	bigintlength	ARRGET	~t9
+~t11	1	*	4
+~t12	bigintlength	ARRGET	~t11
+label5	~t10	<=	~t12
+1		return	
+ENDcompare		j	
+label5		:	
+~t13	0	*	4
+~t14	bigintlength	ARRGET	~t13
+~t15	1	*	4
+~t16	bigintlength	ARRGET	~t15
+label7	~t14	>=	~t16
+~t17		-	1
+~t17		return	
+ENDcompare		j	
+label7		:	
+label9		:	
+~t18	4	spGET	
+~t19	0	*	4
+~t20	bigintlength	ARRGET	~t19
+label10	~t18	>=	~t20
+~t21	0	*	4
+~t22	4	spGET	
+~t21	~t21	*	100
+~t23	~t22	*	4
+~t21	~t21	+	~t23
+~t24	bigintarr	ARRGET	~t21
+~t25	1	*	4
+~t26	4	spGET	
+~t25	~t25	*	100
+~t27	~t26	*	4
+~t25	~t25	+	~t27
+~t28	bigintarr	ARRGET	~t25
+label11	~t24	<=	~t28
+1		return	
+ENDcompare		j	
+label11		:	
+~t29	0	*	4
+~t30	4	spGET	
+~t29	~t29	*	100
+~t31	~t30	*	4
+~t29	~t29	+	~t31
+~t32	bigintarr	ARRGET	~t29
+~t33	1	*	4
+~t34	4	spGET	
+~t33	~t33	*	100
+~t35	~t34	*	4
+~t33	~t33	+	~t35
+~t36	bigintarr	ARRGET	~t33
+label13	~t32	>=	~t36
+~t37		-	1
+~t37		return	
+ENDcompare		j	
+label13		:	
+~t38	4	spGET	
+~t39	~t38	+	1
+~t39	4	spSET	
+label9		j	
+label10		:	
+0		return	
+ENDcompare		j	
+ENDcompare		:	
+		raPop	
+	8	spFree	
+		jr	
+subtract		:	
+	400	spAlloc	VarDef
+	400	spAlloc	VarDef
+	400	spAlloc	VarDef
+	4	spAlloc	VarDef
+	4	spAlloc	VarDef
+	4	spAlloc	VarDef
+	4	spAlloc	VarDef
+	4	spAlloc	VarDef
+	4	spAlloc	VarDef
+	4	spAlloc	(Ra)
+		raPush	
+~t40	0	*	4
+~t41	bigintlength	ARRGET	~t40
+~t41	8	spSET	
+~t42	1	*	4
+~t43	bigintlength	ARRGET	~t42
+~t43	4	spSET	
+		raPush	
+	16	spAlloc	(InterQuat)
+~t40	0	spPush	(InterQuat)
+~t41	4	spPush	(InterQuat)
+~t42	8	spPush	(InterQuat)
+~t43	12	spPush	(InterQuat)
+~t44	24	spGET	
+~t45	20	spGET	
+	8	spAlloc	(ParaSize)
+~t44	0	spPush	(ParaPush)
+~t45	4	spPush	(ParaPush)
+min		jal	
+~t46		$v0	
+	8	spFree	
+~t40	0	spGET	(InterQuat)
+~t41	4	spGET	(InterQuat)
+~t42	8	spGET	(InterQuat)
+~t43	12	spGET	(InterQuat)
+	16	spFree	(InterQuat)
+		raPop	
+~t46	16	spSET	
+		raPush	
+	28	spAlloc	(InterQuat)
+~t40	0	spPush	(InterQuat)
+~t41	4	spPush	(InterQuat)
+~t42	8	spPush	(InterQuat)
+~t43	12	spPush	(InterQuat)
+~t44	16	spPush	(InterQuat)
+~t45	20	spPush	(InterQuat)
+~t46	24	spPush	(InterQuat)
+~t47	36	spGET	
+~t48	32	spGET	
+	8	spAlloc	(ParaSize)
+~t47	0	spPush	(ParaPush)
+~t48	4	spPush	(ParaPush)
+max		jal	
+~t49		$v0	
+	8	spFree	
+~t40	0	spGET	(InterQuat)
+~t41	4	spGET	(InterQuat)
+~t42	8	spGET	(InterQuat)
+~t43	12	spGET	(InterQuat)
+~t44	16	spGET	(InterQuat)
+~t45	20	spGET	(InterQuat)
+~t46	24	spGET	(InterQuat)
+	28	spFree	(InterQuat)
+		raPop	
+~t49	20	spSET	
+		raPush	
+	40	spAlloc	(InterQuat)
+~t40	0	spPush	(InterQuat)
+~t41	4	spPush	(InterQuat)
+~t42	8	spPush	(InterQuat)
+~t43	12	spPush	(InterQuat)
+~t44	16	spPush	(InterQuat)
+~t45	20	spPush	(InterQuat)
+~t46	24	spPush	(InterQuat)
+~t47	28	spPush	(InterQuat)
+~t48	32	spPush	(InterQuat)
+~t49	36	spPush	(InterQuat)
+compare		jal	
+~t50		$v0	
+~t40	0	spGET	(InterQuat)
+~t41	4	spGET	(InterQuat)
+~t42	8	spGET	(InterQuat)
+~t43	12	spGET	(InterQuat)
+~t44	16	spGET	(InterQuat)
+~t45	20	spGET	(InterQuat)
+~t46	24	spGET	(InterQuat)
+~t47	28	spGET	(InterQuat)
+~t48	32	spGET	(InterQuat)
+~t49	36	spGET	(InterQuat)
+	40	spFree	(InterQuat)
+		raPop	
+label15	~t50	<	0
+0	12	spSET	
+0	24	spSET	
+label16		:	
+~t51	24	spGET	
+~t52	8	spGET	
+label17	~t51	>=	~t52
+~t53	24	spGET	
+~t54	0	*	4
+~t55	8	spGET	
+~t56	~t55	-	1
+~t58	24	spGET	
+~t57	~t56	-	~t58
+~t54	~t54	*	100
+~t59	~t57	*	4
+~t54	~t54	+	~t59
+~t60	bigintarr	ARRGET	~t54
+~t61	~t53	*	4
+~t61	~t61	+	828
+~t60	~t61	spARRSET	
+~t62	24	spGET	
+~t63	~t62	+	1
+~t63	24	spSET	
+label16		j	
+label17		:	
+0	24	spSET	
+label18		:	
+~t64	24	spGET	
+~t65	4	spGET	
+label19	~t64	>=	~t65
+~t66	24	spGET	
+~t67	1	*	4
+~t68	4	spGET	
+~t69	~t68	-	1
+~t71	24	spGET	
+~t70	~t69	-	~t71
+~t67	~t67	*	100
+~t72	~t70	*	4
+~t67	~t67	+	~t72
+~t73	bigintarr	ARRGET	~t67
+~t74	~t66	*	4
+~t74	~t74	+	428
+~t73	~t74	spARRSET	
+~t75	24	spGET	
+~t76	~t75	+	1
+~t76	24	spSET	
+label18		j	
+label19		:	
+label20		j	
+label15		:	
+1	12	spSET	
+0	24	spSET	
+label21		:	
+~t77	24	spGET	
+~t78	4	spGET	
+label22	~t77	>=	~t78
+~t79	24	spGET	
+~t80	1	*	4
+~t81	4	spGET	
+~t82	~t81	-	1
+~t84	24	spGET	
+~t83	~t82	-	~t84
+~t80	~t80	*	100
+~t85	~t83	*	4
+~t80	~t80	+	~t85
+~t86	bigintarr	ARRGET	~t80
+~t87	~t79	*	4
+~t87	~t87	+	828
+~t86	~t87	spARRSET	
+~t88	24	spGET	
+~t89	~t88	+	1
+~t89	24	spSET	
+label21		j	
+label22		:	
+0	24	spSET	
+label23		:	
+~t90	24	spGET	
+~t91	8	spGET	
+label24	~t90	>=	~t91
+~t92	24	spGET	
+~t93	0	*	4
+~t94	8	spGET	
+~t95	~t94	-	1
+~t97	24	spGET	
+~t96	~t95	-	~t97
+~t93	~t93	*	100
+~t98	~t96	*	4
+~t93	~t93	+	~t98
+~t99	bigintarr	ARRGET	~t93
+~t100	~t92	*	4
+~t100	~t100	+	428
+~t99	~t100	spARRSET	
+~t101	24	spGET	
+~t102	~t101	+	1
+~t102	24	spSET	
+label23		j	
+label24		:	
+label20		:	
+0	24	spSET	
+label25		:	
+~t103	24	spGET	
+~t104	16	spGET	
+label26	~t103	>=	~t104
+~t105	24	spGET	
+~t106	~t105	*	4
+~t106	~t106	+	828
+~t107	~t106	spARRGET	
+~t108	24	spGET	
+~t109	~t108	*	4
+~t109	~t109	+	428
+~t110	~t109	spARRGET	
+label27	~t107	<	~t110
+~t111	24	spGET	
+~t112	24	spGET	
+~t113	~t112	*	4
+~t113	~t113	+	828
+~t114	~t113	spARRGET	
+~t116	24	spGET	
+~t117	~t116	*	4
+~t117	~t117	+	428
+~t118	~t117	spARRGET	
+~t115	~t114	-	~t118
+~t119	~t111	*	4
+~t119	~t119	+	28
+~t115	~t119	spARRSET	
+label28		j	
+label27		:	
+~t120	24	spGET	
+~t121	24	spGET	
+~t122	~t121	*	4
+~t122	~t122	+	828
+~t123	~t122	spARRGET	
+~t124	~t123	+	10
+~t126	24	spGET	
+~t127	~t126	*	4
+~t127	~t127	+	428
+~t128	~t127	spARRGET	
+~t125	~t124	-	~t128
+~t129	~t120	*	4
+~t129	~t129	+	28
+~t125	~t129	spARRSET	
+~t130	24	spGET	
+~t131	~t130	+	1
+~t132	24	spGET	
+~t133	~t132	+	1
+~t134	~t133	*	4
+~t134	~t134	+	828
+~t135	~t134	spARRGET	
+~t136	~t135	-	1
+~t137	~t131	*	4
+~t137	~t137	+	828
+~t136	~t137	spARRSET	
+label28		:	
+~t138	24	spGET	
+~t139	~t138	+	1
+~t139	24	spSET	
+label25		j	
+label26		:	
+label29		:	
+~t140	24	spGET	
+~t141	20	spGET	
+label30	~t140	>=	~t141
+~t142	24	spGET	
+~t143	~t142	*	4
+~t143	~t143	+	828
+~t144	~t143	spARRGET	
+label31	~t144	<	0
+~t145	24	spGET	
+~t146	24	spGET	
+~t147	~t146	*	4
+~t147	~t147	+	828
+~t148	~t147	spARRGET	
+~t149	~t145	*	4
+~t149	~t149	+	28
+~t148	~t149	spARRSET	
+label32		j	
+label31		:	
+~t150	24	spGET	
+~t151	24	spGET	
+~t152	~t151	*	4
+~t152	~t152	+	828
+~t153	~t152	spARRGET	
+~t154	~t153	+	10
+~t155	~t150	*	4
+~t155	~t155	+	28
+~t154	~t155	spARRSET	
+~t156	24	spGET	
+~t157	~t156	+	1
+~t158	24	spGET	
+~t159	~t158	+	1
+~t160	~t159	*	4
+~t160	~t160	+	828
+~t161	~t160	spARRGET	
+~t162	~t161	-	1
+~t163	~t157	*	4
+~t163	~t163	+	828
+~t162	~t163	spARRSET	
+label32		:	
+~t164	24	spGET	
+~t165	~t164	+	1
+~t165	24	spSET	
+label29		j	
+label30		:	
+label33		:	
+~t166	24	spGET	
+~t167	~t166	-	1
+~t168	~t167	*	4
+~t168	~t168	+	28
+~t169	~t168	spARRGET	
+label34	~t169	!=	0
+~t170	24	spGET	
+~t171	~t170	-	1
+~t171	24	spSET	
+label33		j	
+label34		:	
+0	20	spSET	
+~t172	12	spGET	
+label35	~t172	!=	1
+	str1	print	
+label35		:	
+~t173	24	spGET	
+~t174	~t173	-	1
+~t174	16	spSET	
+label37		:	
+~t175	16	spGET	
+~t176		-	1
+label38	~t175	<=	~t176
+~t177	20	spGET	
+~t178	16	spGET	
+~t179	~t178	*	4
+~t179	~t179	+	28
+~t180	~t179	spARRGET	
+~t181	~t177	*	4
+~t180	result	ARRSETbyVAR	~t181
+~t182	16	spGET	
+~t183	~t182	-	1
+~t183	16	spSET	
+~t184	20	spGET	
+~t185	~t184	+	1
+~t185	20	spSET	
+label37		j	
+label38		:	
+~t186	20	spGET	
+~t186		return	
+ENDsubtract		j	
+ENDsubtract		:	
+		raPop	
+	1228	spFree	
+		jr	
+main		:	
+i	0		
+n		read	
+~t187	0	*	4
+n	bigintlength	ARRSETbyVAR	~t187
+label39		:	
+label40	i	>=	n
+tmp		read	
+~t188	0	*	4
+~t189	i	*	4
+~t188	~t188	*	100
+~t188	~t188	+	~t189
+tmp	bigintarr	ARRSETbyVAR	~t188
+~t190	i	+	1
+i	~t190		
+label39		j	
+label40		:	
+n		read	
+~t191	1	*	4
+n	bigintlength	ARRSETbyVAR	~t191
+i	0		
+label41		:	
+label42	i	>=	n
+tmp		read	
+~t192	1	*	4
+~t193	i	*	4
+~t192	~t192	*	100
+~t192	~t192	+	~t193
+tmp	bigintarr	ARRSETbyVAR	~t192
+~t194	i	+	1
+i	~t194		
+label41		j	
+label42		:	
+i	0		
+subtract		jal	
+~t195		$v0	
+n	~t195		
+label43		:	
+label44	i	>=	n
+~t196	i	*	4
+~t197	result	ARRGET	~t196
+		print	~t197
+~t198	i	+	1
+i	~t198		
+label43		j	
+label44		:	
+EndMain		j	
+EndMain		:	

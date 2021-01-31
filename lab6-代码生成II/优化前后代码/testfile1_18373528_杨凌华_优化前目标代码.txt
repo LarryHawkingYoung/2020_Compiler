@@ -1,0 +1,996 @@
+.data
+.text
+	li $t0 0x10010000
+	li $t1 19971231
+	sw $t1 4000($t0)
+	li $t1 19981013
+	sw $t1 4004($t0)
+	li $t1 1000000007
+	sw $t1 4008($t0)
+	li $t1 0
+	sw $t1 4012($t0)
+	j main
+myscanf :
+	addi $sp $sp -4
+	addi $sp $sp -4
+	sw $ra 0($sp)
+	li $v0 5
+	syscall
+	sw $v0 4($sp)
+	lw $t1 4($sp)
+	sw $t1 4016($t0)
+	lw $v0 4016($t0)
+	j ENDmyscanf
+ENDmyscanf :
+	lw $ra 0($sp)
+	addi $sp $sp 8
+	jr $ra
+myprintf :
+	addi $sp $sp -4
+	sw $ra 0($sp)
+	lw $t1 4($sp)
+	sw $t1 4020($t0)
+	li $v0 1
+	lw $a0 4020($t0)
+	syscall
+	li $v0 11
+	li $a0 '\n'
+	syscall
+	j ENDmyprintf
+ENDmyprintf :
+	lw $ra 0($sp)
+	addi $sp $sp 4
+	jr $ra
+set :
+	addi $sp $sp -124
+	addi $sp $sp -4
+	li $t1 10
+	sw $t1 0($sp)
+	addi $sp $sp -4
+	li $t1 0
+	sw $t1 0($sp)
+	addi $sp $sp -4
+	sw $ra 0($sp)
+	li $t1 0
+	sw $t1 4024($t0)
+	lw $t1 4024($t0)
+	addiu $t1 $t1 12
+	sw $t1 4024($t0)
+	li $t1 1
+	lw $t2 4024($t0)
+	addu $t2 $t2 $sp
+	sw $t1 0($t2)
+	li $t1 0
+	sw $t1 4028($t0)
+	lw $t1 4028($t0)
+	addiu $t1 $t1 12
+	sw $t1 4028($t0)
+	lw $t1 4028($t0)
+	addu $t1 $t1 $sp
+	lw $t1 0($t1)
+	sw $t1 4032($t0)
+	lw $t1 4032($t0)
+	addu $t1, $t1, $t1
+	sw $t1 4036($t0)
+	li $t1 4
+	sw $t1 4040($t0)
+	lw $t1 4040($t0)
+	addiu $t1 $t1 12
+	sw $t1 4040($t0)
+	lw $t1 4036($t0)
+	lw $t2 4040($t0)
+	addu $t2 $t2 $sp
+	sw $t1 0($t2)
+	li $t1 4
+	sw $t1 4044($t0)
+	lw $t1 4044($t0)
+	addiu $t1 $t1 12
+	sw $t1 4044($t0)
+	lw $t1 4044($t0)
+	addu $t1 $t1 $sp
+	lw $t1 0($t1)
+	sw $t1 4048($t0)
+	lw $t1 4048($t0)
+	addu $t1, $t1, $t1
+	sw $t1 4052($t0)
+	li $t1 8
+	sw $t1 4056($t0)
+	lw $t1 4056($t0)
+	addiu $t1 $t1 12
+	sw $t1 4056($t0)
+	lw $t1 4052($t0)
+	lw $t2 4056($t0)
+	addu $t2 $t2 $sp
+	sw $t1 0($t2)
+	li $t1 8
+	sw $t1 4060($t0)
+	lw $t1 4060($t0)
+	addiu $t1 $t1 12
+	sw $t1 4060($t0)
+	lw $t1 4060($t0)
+	addu $t1 $t1 $sp
+	lw $t1 0($t1)
+	sw $t1 4064($t0)
+	lw $t1 4064($t0)
+	addu $t1, $t1, $t1
+	sw $t1 4068($t0)
+	li $t1 12
+	sw $t1 4072($t0)
+	lw $t1 4072($t0)
+	addiu $t1 $t1 12
+	sw $t1 4072($t0)
+	lw $t1 4068($t0)
+	lw $t2 4072($t0)
+	addu $t2 $t2 $sp
+	sw $t1 0($t2)
+	li $t1 12
+	sw $t1 4076($t0)
+	lw $t1 4076($t0)
+	addiu $t1 $t1 12
+	sw $t1 4076($t0)
+	lw $t1 4076($t0)
+	addu $t1 $t1 $sp
+	lw $t1 0($t1)
+	sw $t1 4080($t0)
+	lw $t1 4080($t0)
+	addu $t1, $t1, $t1
+	sw $t1 4084($t0)
+	li $t1 16
+	sw $t1 4088($t0)
+	lw $t1 4088($t0)
+	addiu $t1 $t1 12
+	sw $t1 4088($t0)
+	lw $t1 4084($t0)
+	lw $t2 4088($t0)
+	addu $t2 $t2 $sp
+	sw $t1 0($t2)
+	li $t1 16
+	sw $t1 4092($t0)
+	lw $t1 4092($t0)
+	addiu $t1 $t1 12
+	sw $t1 4092($t0)
+	lw $t1 4092($t0)
+	addu $t1 $t1 $sp
+	lw $t1 0($t1)
+	sw $t1 4096($t0)
+	lw $t1 4096($t0)
+	addu $t1, $t1, $t1
+	sw $t1 4100($t0)
+	li $t1 20
+	sw $t1 4104($t0)
+	lw $t1 4104($t0)
+	addiu $t1 $t1 12
+	sw $t1 4104($t0)
+	lw $t1 4100($t0)
+	lw $t2 4104($t0)
+	addu $t2 $t2 $sp
+	sw $t1 0($t2)
+	li $t1 20
+	sw $t1 4108($t0)
+	lw $t1 4108($t0)
+	addiu $t1 $t1 12
+	sw $t1 4108($t0)
+	lw $t1 4108($t0)
+	addu $t1 $t1 $sp
+	lw $t1 0($t1)
+	sw $t1 4112($t0)
+	lw $t1 4112($t0)
+	addu $t1, $t1, $t1
+	sw $t1 4116($t0)
+	li $t1 24
+	sw $t1 4120($t0)
+	lw $t1 4120($t0)
+	addiu $t1 $t1 12
+	sw $t1 4120($t0)
+	lw $t1 4116($t0)
+	lw $t2 4120($t0)
+	addu $t2 $t2 $sp
+	sw $t1 0($t2)
+	li $t1 24
+	sw $t1 4124($t0)
+	lw $t1 4124($t0)
+	addiu $t1 $t1 12
+	sw $t1 4124($t0)
+	lw $t1 4124($t0)
+	addu $t1 $t1 $sp
+	lw $t1 0($t1)
+	sw $t1 4128($t0)
+	lw $t1 4128($t0)
+	addu $t1, $t1, $t1
+	sw $t1 4132($t0)
+	li $t1 28
+	sw $t1 4136($t0)
+	lw $t1 4136($t0)
+	addiu $t1 $t1 12
+	sw $t1 4136($t0)
+	lw $t1 4132($t0)
+	lw $t2 4136($t0)
+	addu $t2 $t2 $sp
+	sw $t1 0($t2)
+	li $t1 28
+	sw $t1 4140($t0)
+	lw $t1 4140($t0)
+	addiu $t1 $t1 12
+	sw $t1 4140($t0)
+	lw $t1 4140($t0)
+	addu $t1 $t1 $sp
+	lw $t1 0($t1)
+	sw $t1 4144($t0)
+	lw $t1 4144($t0)
+	addu $t1, $t1, $t1
+	sw $t1 4148($t0)
+	li $t1 32
+	sw $t1 4152($t0)
+	lw $t1 4152($t0)
+	addiu $t1 $t1 12
+	sw $t1 4152($t0)
+	lw $t1 4148($t0)
+	lw $t2 4152($t0)
+	addu $t2 $t2 $sp
+	sw $t1 0($t2)
+	li $t1 32
+	sw $t1 4156($t0)
+	lw $t1 4156($t0)
+	addiu $t1 $t1 12
+	sw $t1 4156($t0)
+	lw $t1 4156($t0)
+	addu $t1 $t1 $sp
+	lw $t1 0($t1)
+	sw $t1 4160($t0)
+	lw $t1 4160($t0)
+	addu $t1, $t1, $t1
+	sw $t1 4164($t0)
+	li $t1 36
+	sw $t1 4168($t0)
+	lw $t1 4168($t0)
+	addiu $t1 $t1 12
+	sw $t1 4168($t0)
+	lw $t1 4164($t0)
+	lw $t2 4168($t0)
+	addu $t2 $t2 $sp
+	sw $t1 0($t2)
+	li $t1 36
+	sw $t1 4172($t0)
+	lw $t1 4172($t0)
+	addiu $t1 $t1 12
+	sw $t1 4172($t0)
+	lw $t1 4172($t0)
+	addu $t1 $t1 $sp
+	lw $t1 0($t1)
+	sw $t1 4176($t0)
+	lw $t1 4176($t0)
+	addu $t1, $t1, $t1
+	sw $t1 4180($t0)
+	li $t1 40
+	sw $t1 4184($t0)
+	lw $t1 4184($t0)
+	addiu $t1 $t1 12
+	sw $t1 4184($t0)
+	lw $t1 4180($t0)
+	lw $t2 4184($t0)
+	addu $t2 $t2 $sp
+	sw $t1 0($t2)
+label1 :
+	lw $t1 8($sp)
+	sw $t1 4188($t0)
+	lw $t1 4188($t0)
+	bge $t1 30 label2
+	lw $t1 8($sp)
+	sw $t1 4192($t0)
+	lw $t1 4192($t0)
+	addiu $t1 $t1 1
+	sw $t1 4196($t0)
+	lw $t1 4196($t0)
+	sw $t1 8($sp)
+	lw $t1 8($sp)
+	sw $t1 4200($t0)
+	lw $t1 8($sp)
+	sw $t1 4204($t0)
+	lw $t1 4204($t0)
+	addiu $t1 $t1 -1
+	sw $t1 4208($t0)
+	lw $t1 4208($t0)
+	sll $t1 $t1 2
+	sw $t1 4212($t0)
+	lw $t1 4212($t0)
+	addiu $t1 $t1 12
+	sw $t1 4212($t0)
+	lw $t1 4212($t0)
+	addu $t1 $t1 $sp
+	lw $t1 0($t1)
+	sw $t1 4216($t0)
+	lw $t1 4216($t0)
+	addu $t1, $t1, $t1
+	sw $t1 4220($t0)
+	lw $t1 4200($t0)
+	sll $t1 $t1 2
+	sw $t1 4224($t0)
+	lw $t1 4224($t0)
+	addiu $t1 $t1 12
+	sw $t1 4224($t0)
+	lw $t1 4220($t0)
+	lw $t2 4224($t0)
+	addu $t2 $t2 $sp
+	sw $t1 0($t2)
+	j label1
+label2 :
+	lw $t1 136($sp)
+	sw $t1 4228($t0)
+	lw $t1 4228($t0)
+	li $t2 30
+	div $t1 $t2
+	mflo $t1
+	sw $t1 4232($t0)
+	lw $t1 4232($t0)
+	blt $t1 1000 label3
+	li $v0 0
+	j ENDset
+label3 :
+	lw $t1 136($sp)
+	sw $t1 4236($t0)
+	lw $t1 4236($t0)
+	li $t2 30
+	div $t1 $t2
+	mflo $t1
+	sw $t1 4240($t0)
+	lw $t1 4240($t0)
+	sll $t1 $t1 2
+	sw $t1 4244($t0)
+	lw $t1 4244($t0)
+	addi $t1 $t1 0
+	addu $t1 $t1 $t0
+	lw $t1 0($t1)
+	sw $t1 4248($t0)
+	lw $t1 136($sp)
+	sw $t1 4256($t0)
+	lw $t1 136($sp)
+	sw $t1 4264($t0)
+	lw $t1 4264($t0)
+	li $t2 30
+	div $t1 $t2
+	mflo $t1
+	sw $t1 4268($t0)
+	lw $t1 4268($t0)
+	mul $t1 $t1 30
+	sw $t1 4272($t0)
+	lw $t1 4256($t0)
+	lw $t2 4272($t0)
+	sub $t1 $t1 $t2
+	sw $t1 4260($t0)
+	lw $t1 4260($t0)
+	sll $t1 $t1 2
+	sw $t1 4276($t0)
+	lw $t1 4276($t0)
+	addiu $t1 $t1 12
+	sw $t1 4276($t0)
+	lw $t1 4276($t0)
+	addu $t1 $t1 $sp
+	lw $t1 0($t1)
+	sw $t1 4280($t0)
+	lw $t1 4248($t0)
+	lw $t2 4280($t0)
+	div $t1 $t2
+	mflo $t1
+	sw $t1 4252($t0)
+	lw $t1 136($sp)
+	sw $t1 4288($t0)
+	lw $t1 4288($t0)
+	li $t2 30
+	div $t1 $t2
+	mflo $t1
+	sw $t1 4292($t0)
+	lw $t1 4292($t0)
+	sll $t1 $t1 2
+	sw $t1 4296($t0)
+	lw $t1 4296($t0)
+	addi $t1 $t1 0
+	addu $t1 $t1 $t0
+	lw $t1 0($t1)
+	sw $t1 4300($t0)
+	lw $t1 136($sp)
+	sw $t1 4308($t0)
+	lw $t1 136($sp)
+	sw $t1 4316($t0)
+	lw $t1 4316($t0)
+	li $t2 30
+	div $t1 $t2
+	mflo $t1
+	sw $t1 4320($t0)
+	lw $t1 4320($t0)
+	mul $t1 $t1 30
+	sw $t1 4324($t0)
+	lw $t1 4308($t0)
+	lw $t2 4324($t0)
+	sub $t1 $t1 $t2
+	sw $t1 4312($t0)
+	lw $t1 4312($t0)
+	sll $t1 $t1 2
+	sw $t1 4328($t0)
+	lw $t1 4328($t0)
+	addiu $t1 $t1 12
+	sw $t1 4328($t0)
+	lw $t1 4328($t0)
+	addu $t1 $t1 $sp
+	lw $t1 0($t1)
+	sw $t1 4332($t0)
+	lw $t1 4300($t0)
+	lw $t2 4332($t0)
+	div $t1 $t2
+	mflo $t1
+	sw $t1 4304($t0)
+	lw $t1 4304($t0)
+	li $t2 2
+	div $t1 $t2
+	mflo $t1
+	sw $t1 4336($t0)
+	lw $t1 4336($t0)
+	addu $t1, $t1, $t1
+	sw $t1 4340($t0)
+	lw $t1 4252($t0)
+	lw $t2 4340($t0)
+	sub $t1 $t1 $t2
+	sw $t1 4284($t0)
+	lw $t1 140($sp)
+	sw $t1 4344($t0)
+	lw $t1 4284($t0)
+	lw $t2 4344($t0)
+	beq $t1 $t2 label5
+	lw $t1 136($sp)
+	sw $t1 4348($t0)
+	lw $t1 4348($t0)
+	li $t2 30
+	div $t1 $t2
+	mflo $t1
+	sw $t1 4352($t0)
+	lw $t1 4352($t0)
+	sll $t1 $t1 2
+	sw $t1 4356($t0)
+	lw $t1 4356($t0)
+	addi $t1 $t1 0
+	addu $t1 $t1 $t0
+	lw $t1 0($t1)
+	sw $t1 4360($t0)
+	lw $t1 136($sp)
+	sw $t1 4368($t0)
+	lw $t1 136($sp)
+	sw $t1 4376($t0)
+	lw $t1 4376($t0)
+	li $t2 30
+	div $t1 $t2
+	mflo $t1
+	sw $t1 4380($t0)
+	lw $t1 4380($t0)
+	mul $t1 $t1 30
+	sw $t1 4384($t0)
+	lw $t1 4368($t0)
+	lw $t2 4384($t0)
+	sub $t1 $t1 $t2
+	sw $t1 4372($t0)
+	lw $t1 4372($t0)
+	sll $t1 $t1 2
+	sw $t1 4388($t0)
+	lw $t1 4388($t0)
+	addiu $t1 $t1 12
+	sw $t1 4388($t0)
+	lw $t1 4388($t0)
+	addu $t1 $t1 $sp
+	lw $t1 0($t1)
+	sw $t1 4392($t0)
+	lw $t1 4360($t0)
+	lw $t2 4392($t0)
+	div $t1 $t2
+	mflo $t1
+	sw $t1 4364($t0)
+	lw $t1 136($sp)
+	sw $t1 4400($t0)
+	lw $t1 4400($t0)
+	li $t2 30
+	div $t1 $t2
+	mflo $t1
+	sw $t1 4404($t0)
+	lw $t1 4404($t0)
+	sll $t1 $t1 2
+	sw $t1 4408($t0)
+	lw $t1 4408($t0)
+	addi $t1 $t1 0
+	addu $t1 $t1 $t0
+	lw $t1 0($t1)
+	sw $t1 4412($t0)
+	lw $t1 136($sp)
+	sw $t1 4420($t0)
+	lw $t1 136($sp)
+	sw $t1 4428($t0)
+	lw $t1 4428($t0)
+	li $t2 30
+	div $t1 $t2
+	mflo $t1
+	sw $t1 4432($t0)
+	lw $t1 4432($t0)
+	mul $t1 $t1 30
+	sw $t1 4436($t0)
+	lw $t1 4420($t0)
+	lw $t2 4436($t0)
+	sub $t1 $t1 $t2
+	sw $t1 4424($t0)
+	lw $t1 4424($t0)
+	sll $t1 $t1 2
+	sw $t1 4440($t0)
+	lw $t1 4440($t0)
+	addiu $t1 $t1 12
+	sw $t1 4440($t0)
+	lw $t1 4440($t0)
+	addu $t1 $t1 $sp
+	lw $t1 0($t1)
+	sw $t1 4444($t0)
+	lw $t1 4412($t0)
+	lw $t2 4444($t0)
+	div $t1 $t2
+	mflo $t1
+	sw $t1 4416($t0)
+	lw $t1 4416($t0)
+	li $t2 2
+	div $t1 $t2
+	mflo $t1
+	sw $t1 4448($t0)
+	lw $t1 4448($t0)
+	addu $t1, $t1, $t1
+	sw $t1 4452($t0)
+	lw $t1 4364($t0)
+	lw $t2 4452($t0)
+	sub $t1 $t1 $t2
+	sw $t1 4396($t0)
+	lw $t1 4396($t0)
+	bne $t1 0 label6
+	lw $t1 140($sp)
+	sw $t1 4456($t0)
+	lw $t1 4456($t0)
+	bne $t1 1 label7
+	lw $t1 136($sp)
+	sw $t1 4460($t0)
+	lw $t1 136($sp)
+	sw $t1 4468($t0)
+	lw $t1 4468($t0)
+	li $t2 30
+	div $t1 $t2
+	mflo $t1
+	sw $t1 4472($t0)
+	lw $t1 4472($t0)
+	mul $t1 $t1 30
+	sw $t1 4476($t0)
+	lw $t1 4460($t0)
+	lw $t2 4476($t0)
+	sub $t1 $t1 $t2
+	sw $t1 4464($t0)
+	lw $t1 4464($t0)
+	sll $t1 $t1 2
+	sw $t1 4480($t0)
+	lw $t1 4480($t0)
+	addiu $t1 $t1 12
+	sw $t1 4480($t0)
+	lw $t1 4480($t0)
+	addu $t1 $t1 $sp
+	lw $t1 0($t1)
+	sw $t1 4484($t0)
+	lw $t1 4484($t0)
+	sw $t1 4($sp)
+label7 :
+label6 :
+	lw $t1 136($sp)
+	sw $t1 4488($t0)
+	lw $t1 4488($t0)
+	li $t2 30
+	div $t1 $t2
+	mflo $t1
+	sw $t1 4492($t0)
+	lw $t1 4492($t0)
+	sll $t1 $t1 2
+	sw $t1 4496($t0)
+	lw $t1 4496($t0)
+	addi $t1 $t1 0
+	addu $t1 $t1 $t0
+	lw $t1 0($t1)
+	sw $t1 4500($t0)
+	lw $t1 136($sp)
+	sw $t1 4508($t0)
+	lw $t1 136($sp)
+	sw $t1 4516($t0)
+	lw $t1 4516($t0)
+	li $t2 30
+	div $t1 $t2
+	mflo $t1
+	sw $t1 4520($t0)
+	lw $t1 4520($t0)
+	mul $t1 $t1 30
+	sw $t1 4524($t0)
+	lw $t1 4508($t0)
+	lw $t2 4524($t0)
+	sub $t1 $t1 $t2
+	sw $t1 4512($t0)
+	lw $t1 4512($t0)
+	sll $t1 $t1 2
+	sw $t1 4528($t0)
+	lw $t1 4528($t0)
+	addiu $t1 $t1 12
+	sw $t1 4528($t0)
+	lw $t1 4528($t0)
+	addu $t1 $t1 $sp
+	lw $t1 0($t1)
+	sw $t1 4532($t0)
+	lw $t1 4500($t0)
+	lw $t2 4532($t0)
+	div $t1 $t2
+	mflo $t1
+	sw $t1 4504($t0)
+	lw $t1 136($sp)
+	sw $t1 4540($t0)
+	lw $t1 4540($t0)
+	li $t2 30
+	div $t1 $t2
+	mflo $t1
+	sw $t1 4544($t0)
+	lw $t1 4544($t0)
+	sll $t1 $t1 2
+	sw $t1 4548($t0)
+	lw $t1 4548($t0)
+	addi $t1 $t1 0
+	addu $t1 $t1 $t0
+	lw $t1 0($t1)
+	sw $t1 4552($t0)
+	lw $t1 136($sp)
+	sw $t1 4560($t0)
+	lw $t1 136($sp)
+	sw $t1 4568($t0)
+	lw $t1 4568($t0)
+	li $t2 30
+	div $t1 $t2
+	mflo $t1
+	sw $t1 4572($t0)
+	lw $t1 4572($t0)
+	mul $t1 $t1 30
+	sw $t1 4576($t0)
+	lw $t1 4560($t0)
+	lw $t2 4576($t0)
+	sub $t1 $t1 $t2
+	sw $t1 4564($t0)
+	lw $t1 4564($t0)
+	sll $t1 $t1 2
+	sw $t1 4580($t0)
+	lw $t1 4580($t0)
+	addiu $t1 $t1 12
+	sw $t1 4580($t0)
+	lw $t1 4580($t0)
+	addu $t1 $t1 $sp
+	lw $t1 0($t1)
+	sw $t1 4584($t0)
+	lw $t1 4552($t0)
+	lw $t2 4584($t0)
+	div $t1 $t2
+	mflo $t1
+	sw $t1 4556($t0)
+	lw $t1 4556($t0)
+	li $t2 2
+	div $t1 $t2
+	mflo $t1
+	sw $t1 4588($t0)
+	lw $t1 4588($t0)
+	addu $t1, $t1, $t1
+	sw $t1 4592($t0)
+	lw $t1 4504($t0)
+	lw $t2 4592($t0)
+	sub $t1 $t1 $t2
+	sw $t1 4536($t0)
+	lw $t1 4536($t0)
+	bne $t1 1 label10
+	lw $t1 140($sp)
+	sw $t1 4596($t0)
+	lw $t1 4596($t0)
+	bne $t1 0 label11
+	lw $t1 4($sp)
+	sw $t1 4600($t0)
+	lw $t1 136($sp)
+	sw $t1 4608($t0)
+	lw $t1 136($sp)
+	sw $t1 4616($t0)
+	lw $t1 4616($t0)
+	li $t2 30
+	div $t1 $t2
+	mflo $t1
+	sw $t1 4620($t0)
+	lw $t1 4620($t0)
+	mul $t1 $t1 30
+	sw $t1 4624($t0)
+	lw $t1 4608($t0)
+	lw $t2 4624($t0)
+	sub $t1 $t1 $t2
+	sw $t1 4612($t0)
+	lw $t1 4612($t0)
+	sll $t1 $t1 2
+	sw $t1 4628($t0)
+	lw $t1 4628($t0)
+	addiu $t1 $t1 12
+	sw $t1 4628($t0)
+	lw $t1 4628($t0)
+	addu $t1 $t1 $sp
+	lw $t1 0($t1)
+	sw $t1 4632($t0)
+	lw $t1 4600($t0)
+	lw $t2 4632($t0)
+	sub $t1 $t1 $t2
+	sw $t1 4604($t0)
+	lw $t1 4604($t0)
+	sw $t1 4($sp)
+label11 :
+label10 :
+label5 :
+	lw $t1 136($sp)
+	sw $t1 4636($t0)
+	lw $t1 4636($t0)
+	li $t2 30
+	div $t1 $t2
+	mflo $t1
+	sw $t1 4640($t0)
+	lw $t1 136($sp)
+	sw $t1 4644($t0)
+	lw $t1 4644($t0)
+	li $t2 30
+	div $t1 $t2
+	mflo $t1
+	sw $t1 4648($t0)
+	lw $t1 4648($t0)
+	sll $t1 $t1 2
+	sw $t1 4652($t0)
+	lw $t1 4652($t0)
+	addi $t1 $t1 0
+	addu $t1 $t1 $t0
+	lw $t1 0($t1)
+	sw $t1 4656($t0)
+	lw $t1 4($sp)
+	sw $t1 4664($t0)
+	lw $t1 4656($t0)
+	lw $t2 4664($t0)
+	addu $t1 $t1 $t2
+	sw $t1 4660($t0)
+	lw $t1 4640($t0)
+	sll $t1 $t1 2
+	sw $t1 4668($t0)
+	lw $t1 4660($t0)
+	lw $t2 4668($t0)
+	addi $t2 $t2 0
+	addu $t2 $t2 $t0
+	sw $t1 0($t2)
+	li $v0 0
+	j ENDset
+ENDset :
+	lw $ra 0($sp)
+	addi $sp $sp 136
+	jr $ra
+rand :
+	addi $sp $sp -4
+	sw $ra 0($sp)
+	li $t1 0
+	sw $t1 4676($t0)
+	lw $t1 4676($t0)
+	addi $t1 $t1 4000
+	addu $t1 $t1 $t0
+	lw $t1 0($t1)
+	sw $t1 4680($t0)
+	lw $t1 4012($t0)
+	lw $t2 4680($t0)
+	mul $t1 $t1 $t2
+	sw $t1 4672($t0)
+	li $t1 4
+	sw $t1 4688($t0)
+	lw $t1 4688($t0)
+	addi $t1 $t1 4000
+	addu $t1 $t1 $t0
+	lw $t1 0($t1)
+	sw $t1 4692($t0)
+	lw $t1 4672($t0)
+	lw $t2 4692($t0)
+	addu $t1 $t1 $t2
+	sw $t1 4684($t0)
+	lw $t1 4684($t0)
+	sw $t1 4012($t0)
+	li $t1 8
+	sw $t1 4704($t0)
+	lw $t1 4704($t0)
+	addi $t1 $t1 4000
+	addu $t1 $t1 $t0
+	lw $t1 0($t1)
+	sw $t1 4708($t0)
+	lw $t1 4012($t0)
+	lw $t2 4708($t0)
+	div $t1 $t2
+	mflo $t1
+	sw $t1 4700($t0)
+	li $t1 8
+	sw $t1 4716($t0)
+	lw $t1 4716($t0)
+	addi $t1 $t1 4000
+	addu $t1 $t1 $t0
+	lw $t1 0($t1)
+	sw $t1 4720($t0)
+	lw $t1 4700($t0)
+	lw $t2 4720($t0)
+	mul $t1 $t1 $t2
+	sw $t1 4712($t0)
+	lw $t1 4012($t0)
+	lw $t2 4712($t0)
+	sub $t1 $t1 $t2
+	sw $t1 4696($t0)
+	lw $t1 4696($t0)
+	sw $t1 4012($t0)
+	lw $t1 4012($t0)
+	bge $t1 0 label15
+	li $t1 8
+	sw $t1 4724($t0)
+	lw $t1 4724($t0)
+	addi $t1 $t1 4000
+	addu $t1 $t1 $t0
+	lw $t1 0($t1)
+	sw $t1 4728($t0)
+	lw $t1 4728($t0)
+	lw $t2 4012($t0)
+	addu $t1 $t1 $t2
+	sw $t1 4732($t0)
+	lw $t1 4732($t0)
+	sw $t1 4012($t0)
+label15 :
+	lw $v0 4012($t0)
+	j ENDrand
+ENDrand :
+	lw $ra 0($sp)
+	addi $sp $sp 4
+	jr $ra
+main :
+	li $t1 0
+	sw $t1 4752($t0)
+	li $t1 0
+	sw $t1 4756($t0)
+	li $t1 0
+	sw $t1 4760($t0)
+label17 :
+	lw $t1 4760($t0)
+	bge $t1 1000 label18
+	lw $t1 4760($t0)
+	sll $t1 $t1 2
+	sw $t1 4764($t0)
+	li $t1 0
+	lw $t2 4764($t0)
+	addi $t2 $t2 0
+	addu $t2 $t2 $t0
+	sw $t1 0($t2)
+	lw $t1 4760($t0)
+	addiu $t1 $t1 1
+	sw $t1 4768($t0)
+	lw $t1 4768($t0)
+	sw $t1 4760($t0)
+	j label17
+label18 :
+	jal myscanf
+	sw $v0 4772($t0)
+	lw $t1 4772($t0)
+	sw $t1 4736($t0)
+	jal myscanf
+	sw $v0 4776($t0)
+	lw $t1 4776($t0)
+	sw $t1 4012($t0)
+label19 :
+	lw $t1 4736($t0)
+	ble $t1 0 label20
+	lw $t1 4736($t0)
+	addiu $t1 $t1 -1
+	sw $t1 4780($t0)
+	lw $t1 4780($t0)
+	sw $t1 4736($t0)
+	jal rand
+	sw $v0 4784($t0)
+	lw $t1 4784($t0)
+	sw $t1 4748($t0)
+	lw $t1 4748($t0)
+	li $t2 300000
+	div $t1 $t2
+	mflo $t1
+	sw $t1 4792($t0)
+	lw $t1 4792($t0)
+	mul $t1 $t1 300000
+	sw $t1 4796($t0)
+	lw $t1 4748($t0)
+	lw $t2 4796($t0)
+	sub $t1 $t1 $t2
+	sw $t1 4788($t0)
+	lw $t1 4788($t0)
+	sw $t1 4740($t0)
+	jal rand
+	sw $v0 4800($t0)
+	lw $t1 4800($t0)
+	sw $t1 4748($t0)
+	lw $t1 4748($t0)
+	li $t2 2
+	div $t1 $t2
+	mflo $t1
+	sw $t1 4808($t0)
+	lw $t1 4808($t0)
+	addu $t1, $t1, $t1
+	sw $t1 4812($t0)
+	lw $t1 4748($t0)
+	lw $t2 4812($t0)
+	sub $t1 $t1 $t2
+	sw $t1 4804($t0)
+	lw $t1 4804($t0)
+	sw $t1 4744($t0)
+	addi $sp $sp -8
+	lw $t1 4740($t0)
+	sw $t1 0($sp)
+	lw $t1 4744($t0)
+	sw $t1 4($sp)
+	jal set
+	sw $v0 4816($t0)
+	addi $sp $sp 8
+	j label19
+label20 :
+label21 :
+	lw $t1 4756($t0)
+	bge $t1 1000 label22
+	lw $t1 4756($t0)
+	sll $t1 $t1 2
+	sw $t1 4824($t0)
+	lw $t1 4824($t0)
+	addi $t1 $t1 0
+	addu $t1 $t1 $t0
+	lw $t1 0($t1)
+	sw $t1 4828($t0)
+	lw $t1 4756($t0)
+	sll $t1 $t1 2
+	sw $t1 4836($t0)
+	lw $t1 4836($t0)
+	addi $t1 $t1 0
+	addu $t1 $t1 $t0
+	lw $t1 0($t1)
+	sw $t1 4840($t0)
+	lw $t1 4840($t0)
+	li $t2 100000
+	div $t1 $t2
+	mflo $t1
+	sw $t1 4844($t0)
+	lw $t1 4844($t0)
+	mul $t1 $t1 100000
+	sw $t1 4848($t0)
+	lw $t1 4828($t0)
+	lw $t2 4848($t0)
+	sub $t1 $t1 $t2
+	sw $t1 4832($t0)
+	lw $t1 4752($t0)
+	lw $t2 4832($t0)
+	addu $t1 $t1 $t2
+	sw $t1 4820($t0)
+	lw $t1 4820($t0)
+	sw $t1 4752($t0)
+	lw $t1 4752($t0)
+	li $t2 100000
+	div $t1 $t2
+	mflo $t1
+	sw $t1 4856($t0)
+	lw $t1 4856($t0)
+	mul $t1 $t1 100000
+	sw $t1 4860($t0)
+	lw $t1 4752($t0)
+	lw $t2 4860($t0)
+	sub $t1 $t1 $t2
+	sw $t1 4852($t0)
+	lw $t1 4852($t0)
+	sw $t1 4752($t0)
+	lw $t1 4756($t0)
+	addiu $t1 $t1 1
+	sw $t1 4864($t0)
+	lw $t1 4864($t0)
+	sw $t1 4756($t0)
+	j label21
+label22 :
+	addi $sp $sp -4
+	lw $t1 4752($t0)
+	sw $t1 0($sp)
+	jal myprintf
+	addi $sp $sp 4
+	j EndMain
+EndMain :

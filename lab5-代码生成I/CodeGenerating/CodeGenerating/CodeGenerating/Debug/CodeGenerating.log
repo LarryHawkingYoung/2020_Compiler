@@ -1,0 +1,113 @@
+﻿  Application.cpp
+f:\thirdgrade_i\编译技术\实验\lab5-代码生成i\codegenerating\codegenerating\codegenerating\symboltable.h(5,15): error C2011: 'KindEnum': 'enum' type redefinition
+f:\thirdgrade_i\编译技术\实验\lab5-代码生成i\codegenerating\codegenerating\codegenerating\symboltable.h(5): message : see declaration of 'KindEnum'
+f:\thirdgrade_i\编译技术\实验\lab5-代码生成i\codegenerating\codegenerating\codegenerating\symboltable.h(12,15): error C2011: 'TypeEnum': 'enum' type redefinition
+f:\thirdgrade_i\编译技术\实验\lab5-代码生成i\codegenerating\codegenerating\codegenerating\symboltable.h(12): message : see declaration of 'TypeEnum'
+f:\thirdgrade_i\编译技术\实验\lab5-代码生成i\codegenerating\codegenerating\codegenerating\symboltable.h(19,1): error C2011: 'Symbol': 'struct' type redefinition
+f:\thirdgrade_i\编译技术\实验\lab5-代码生成i\codegenerating\codegenerating\codegenerating\symboltable.h(18): message : see declaration of 'Symbol'
+f:\thirdgrade_i\编译技术\实验\lab5-代码生成i\codegenerating\codegenerating\codegenerating\application.cpp(28,21): error C2079: 'symTab' uses undefined struct 'Symbol'
+f:\thirdgrade_i\编译技术\实验\lab5-代码生成i\codegenerating\codegenerating\codegenerating\application.cpp(144,16): error C2079: 'sym' uses undefined struct 'Symbol'
+f:\thirdgrade_i\编译技术\实验\lab5-代码生成i\codegenerating\codegenerating\codegenerating\application.cpp(144,24): error C2109: subscript requires array or pointer type
+f:\thirdgrade_i\编译技术\实验\lab5-代码生成i\codegenerating\codegenerating\codegenerating\application.cpp(152,20): warning C4018: '<': signed/unsigned mismatch
+f:\thirdgrade_i\编译技术\实验\lab5-代码生成i\codegenerating\codegenerating\codegenerating\application.cpp(153,16): error C2079: 'sym' uses undefined struct 'Symbol'
+f:\thirdgrade_i\编译技术\实验\lab5-代码生成i\codegenerating\codegenerating\codegenerating\application.cpp(153,31): error C2027: use of undefined type 'Symbol'
+f:\thirdgrade_i\编译技术\实验\lab5-代码生成i\codegenerating\codegenerating\codegenerating\symboltable.h(18): message : see declaration of 'Symbol'
+f:\thirdgrade_i\编译技术\实验\lab5-代码生成i\codegenerating\codegenerating\codegenerating\application.cpp(161,20): warning C4018: '<': signed/unsigned mismatch
+f:\thirdgrade_i\编译技术\实验\lab5-代码生成i\codegenerating\codegenerating\codegenerating\application.cpp(219,41): warning C4018: '<': signed/unsigned mismatch
+f:\thirdgrade_i\编译技术\实验\lab5-代码生成i\codegenerating\codegenerating\codegenerating\application.cpp(465,17): error C2079: 'sym' uses undefined struct 'Symbol'
+f:\thirdgrade_i\编译技术\实验\lab5-代码生成i\codegenerating\codegenerating\codegenerating\application.cpp(465,39): error C2027: use of undefined type 'Symbol'
+f:\thirdgrade_i\编译技术\实验\lab5-代码生成i\codegenerating\codegenerating\codegenerating\symboltable.h(18): message : see declaration of 'Symbol'
+f:\thirdgrade_i\编译技术\实验\lab5-代码生成i\codegenerating\codegenerating\codegenerating\application.cpp(465,30): error C2027: use of undefined type 'Symbol'
+f:\thirdgrade_i\编译技术\实验\lab5-代码生成i\codegenerating\codegenerating\codegenerating\symboltable.h(18): message : see declaration of 'Symbol'
+f:\thirdgrade_i\编译技术\实验\lab5-代码生成i\codegenerating\codegenerating\codegenerating\application.cpp(493,19): error C2079: 'sym' uses undefined struct 'Symbol'
+f:\thirdgrade_i\编译技术\实验\lab5-代码生成i\codegenerating\codegenerating\codegenerating\application.cpp(493,39): error C2027: use of undefined type 'Symbol'
+f:\thirdgrade_i\编译技术\实验\lab5-代码生成i\codegenerating\codegenerating\codegenerating\symboltable.h(18): message : see declaration of 'Symbol'
+f:\thirdgrade_i\编译技术\实验\lab5-代码生成i\codegenerating\codegenerating\codegenerating\application.cpp(493,32): error C2027: use of undefined type 'Symbol'
+f:\thirdgrade_i\编译技术\实验\lab5-代码生成i\codegenerating\codegenerating\codegenerating\symboltable.h(18): message : see declaration of 'Symbol'
+f:\thirdgrade_i\编译技术\实验\lab5-代码生成i\codegenerating\codegenerating\codegenerating\application.cpp(507,17): error C2079: 'ans' uses undefined struct 'Symbol'
+f:\thirdgrade_i\编译技术\实验\lab5-代码生成i\codegenerating\codegenerating\codegenerating\application.cpp(507,39): error C2027: use of undefined type 'Symbol'
+f:\thirdgrade_i\编译技术\实验\lab5-代码生成i\codegenerating\codegenerating\codegenerating\symboltable.h(18): message : see declaration of 'Symbol'
+f:\thirdgrade_i\编译技术\实验\lab5-代码生成i\codegenerating\codegenerating\codegenerating\application.cpp(507,30): error C2027: use of undefined type 'Symbol'
+f:\thirdgrade_i\编译技术\实验\lab5-代码生成i\codegenerating\codegenerating\codegenerating\symboltable.h(18): message : see declaration of 'Symbol'
+f:\thirdgrade_i\编译技术\实验\lab5-代码生成i\codegenerating\codegenerating\codegenerating\application.cpp(520,19): error C2079: 'sym' uses undefined struct 'Symbol'
+f:\thirdgrade_i\编译技术\实验\lab5-代码生成i\codegenerating\codegenerating\codegenerating\application.cpp(520,39): error C2027: use of undefined type 'Symbol'
+f:\thirdgrade_i\编译技术\实验\lab5-代码生成i\codegenerating\codegenerating\codegenerating\symboltable.h(18): message : see declaration of 'Symbol'
+f:\thirdgrade_i\编译技术\实验\lab5-代码生成i\codegenerating\codegenerating\codegenerating\application.cpp(520,32): error C2027: use of undefined type 'Symbol'
+f:\thirdgrade_i\编译技术\实验\lab5-代码生成i\codegenerating\codegenerating\codegenerating\symboltable.h(18): message : see declaration of 'Symbol'
+f:\thirdgrade_i\编译技术\实验\lab5-代码生成i\codegenerating\codegenerating\codegenerating\application.cpp(539,21): error C2079: 'sym1' uses undefined struct 'Symbol'
+f:\thirdgrade_i\编译技术\实验\lab5-代码生成i\codegenerating\codegenerating\codegenerating\application.cpp(539,41): error C2027: use of undefined type 'Symbol'
+f:\thirdgrade_i\编译技术\实验\lab5-代码生成i\codegenerating\codegenerating\codegenerating\symboltable.h(18): message : see declaration of 'Symbol'
+f:\thirdgrade_i\编译技术\实验\lab5-代码生成i\codegenerating\codegenerating\codegenerating\application.cpp(539,34): error C2027: use of undefined type 'Symbol'
+f:\thirdgrade_i\编译技术\实验\lab5-代码生成i\codegenerating\codegenerating\codegenerating\symboltable.h(18): message : see declaration of 'Symbol'
+f:\thirdgrade_i\编译技术\实验\lab5-代码生成i\codegenerating\codegenerating\codegenerating\application.cpp(553,20): error C2079: 'sym2' uses undefined struct 'Symbol'
+f:\thirdgrade_i\编译技术\实验\lab5-代码生成i\codegenerating\codegenerating\codegenerating\application.cpp(553,40): error C2027: use of undefined type 'Symbol'
+f:\thirdgrade_i\编译技术\实验\lab5-代码生成i\codegenerating\codegenerating\codegenerating\symboltable.h(18): message : see declaration of 'Symbol'
+f:\thirdgrade_i\编译技术\实验\lab5-代码生成i\codegenerating\codegenerating\codegenerating\application.cpp(553,33): error C2027: use of undefined type 'Symbol'
+f:\thirdgrade_i\编译技术\实验\lab5-代码生成i\codegenerating\codegenerating\codegenerating\symboltable.h(18): message : see declaration of 'Symbol'
+f:\thirdgrade_i\编译技术\实验\lab5-代码生成i\codegenerating\codegenerating\codegenerating\application.cpp(578,20): warning C4018: '<': signed/unsigned mismatch
+f:\thirdgrade_i\编译技术\实验\lab5-代码生成i\codegenerating\codegenerating\codegenerating\application.cpp(619,20): error C2109: subscript requires array or pointer type
+f:\thirdgrade_i\编译技术\实验\lab5-代码生成i\codegenerating\codegenerating\codegenerating\application.cpp(619,30): error C2027: use of undefined type 'Symbol'
+f:\thirdgrade_i\编译技术\实验\lab5-代码生成i\codegenerating\codegenerating\codegenerating\symboltable.h(18): message : see declaration of 'Symbol'
+f:\thirdgrade_i\编译技术\实验\lab5-代码生成i\codegenerating\codegenerating\codegenerating\application.cpp(638,33): error C2027: use of undefined type 'Symbol'
+f:\thirdgrade_i\编译技术\实验\lab5-代码生成i\codegenerating\codegenerating\codegenerating\symboltable.h(18): message : see declaration of 'Symbol'
+f:\thirdgrade_i\编译技术\实验\lab5-代码生成i\codegenerating\codegenerating\codegenerating\application.cpp(792,21): error C2109: subscript requires array or pointer type
+f:\thirdgrade_i\编译技术\实验\lab5-代码生成i\codegenerating\codegenerating\codegenerating\application.cpp(792,31): error C2027: use of undefined type 'Symbol'
+f:\thirdgrade_i\编译技术\实验\lab5-代码生成i\codegenerating\codegenerating\codegenerating\symboltable.h(18): message : see declaration of 'Symbol'
+f:\thirdgrade_i\编译技术\实验\lab5-代码生成i\codegenerating\codegenerating\codegenerating\application.cpp(804,34): error C2027: use of undefined type 'Symbol'
+f:\thirdgrade_i\编译技术\实验\lab5-代码生成i\codegenerating\codegenerating\codegenerating\symboltable.h(18): message : see declaration of 'Symbol'
+f:\thirdgrade_i\编译技术\实验\lab5-代码生成i\codegenerating\codegenerating\codegenerating\application.cpp(939,22): error C2109: subscript requires array or pointer type
+f:\thirdgrade_i\编译技术\实验\lab5-代码生成i\codegenerating\codegenerating\codegenerating\application.cpp(939,32): error C2027: use of undefined type 'Symbol'
+f:\thirdgrade_i\编译技术\实验\lab5-代码生成i\codegenerating\codegenerating\codegenerating\symboltable.h(18): message : see declaration of 'Symbol'
+f:\thirdgrade_i\编译技术\实验\lab5-代码生成i\codegenerating\codegenerating\codegenerating\application.cpp(951,35): error C2027: use of undefined type 'Symbol'
+f:\thirdgrade_i\编译技术\实验\lab5-代码生成i\codegenerating\codegenerating\codegenerating\symboltable.h(18): message : see declaration of 'Symbol'
+f:\thirdgrade_i\编译技术\实验\lab5-代码生成i\codegenerating\codegenerating\codegenerating\application.cpp(1016,20): error C2109: subscript requires array or pointer type
+f:\thirdgrade_i\编译技术\实验\lab5-代码生成i\codegenerating\codegenerating\codegenerating\application.cpp(1016,30): error C2027: use of undefined type 'Symbol'
+f:\thirdgrade_i\编译技术\实验\lab5-代码生成i\codegenerating\codegenerating\codegenerating\symboltable.h(18): message : see declaration of 'Symbol'
+f:\thirdgrade_i\编译技术\实验\lab5-代码生成i\codegenerating\codegenerating\codegenerating\application.cpp(1028,33): error C2027: use of undefined type 'Symbol'
+f:\thirdgrade_i\编译技术\实验\lab5-代码生成i\codegenerating\codegenerating\codegenerating\symboltable.h(18): message : see declaration of 'Symbol'
+f:\thirdgrade_i\编译技术\实验\lab5-代码生成i\codegenerating\codegenerating\codegenerating\application.cpp(1106,20): error C2109: subscript requires array or pointer type
+f:\thirdgrade_i\编译技术\实验\lab5-代码生成i\codegenerating\codegenerating\codegenerating\application.cpp(1106,30): error C2027: use of undefined type 'Symbol'
+f:\thirdgrade_i\编译技术\实验\lab5-代码生成i\codegenerating\codegenerating\codegenerating\symboltable.h(18): message : see declaration of 'Symbol'
+f:\thirdgrade_i\编译技术\实验\lab5-代码生成i\codegenerating\codegenerating\codegenerating\application.cpp(1116,21): error C2109: subscript requires array or pointer type
+f:\thirdgrade_i\编译技术\实验\lab5-代码生成i\codegenerating\codegenerating\codegenerating\application.cpp(1116,31): error C2027: use of undefined type 'Symbol'
+f:\thirdgrade_i\编译技术\实验\lab5-代码生成i\codegenerating\codegenerating\codegenerating\symboltable.h(18): message : see declaration of 'Symbol'
+f:\thirdgrade_i\编译技术\实验\lab5-代码生成i\codegenerating\codegenerating\codegenerating\application.cpp(1140,21): error C2109: subscript requires array or pointer type
+f:\thirdgrade_i\编译技术\实验\lab5-代码生成i\codegenerating\codegenerating\codegenerating\application.cpp(1140,31): error C2027: use of undefined type 'Symbol'
+f:\thirdgrade_i\编译技术\实验\lab5-代码生成i\codegenerating\codegenerating\codegenerating\symboltable.h(18): message : see declaration of 'Symbol'
+f:\thirdgrade_i\编译技术\实验\lab5-代码生成i\codegenerating\codegenerating\codegenerating\application.cpp(1149,20): error C2109: subscript requires array or pointer type
+f:\thirdgrade_i\编译技术\实验\lab5-代码生成i\codegenerating\codegenerating\codegenerating\application.cpp(1149,30): error C2027: use of undefined type 'Symbol'
+f:\thirdgrade_i\编译技术\实验\lab5-代码生成i\codegenerating\codegenerating\codegenerating\symboltable.h(18): message : see declaration of 'Symbol'
+f:\thirdgrade_i\编译技术\实验\lab5-代码生成i\codegenerating\codegenerating\codegenerating\application.cpp(1293,6): error C2109: subscript requires array or pointer type
+f:\thirdgrade_i\编译技术\实验\lab5-代码生成i\codegenerating\codegenerating\codegenerating\application.cpp(1303,7): error C2109: subscript requires array or pointer type
+f:\thirdgrade_i\编译技术\实验\lab5-代码生成i\codegenerating\codegenerating\codegenerating\application.cpp(1320,9): error C2561: 'parseFuncCallWithReturn': function must return a value
+f:\thirdgrade_i\编译技术\实验\lab5-代码生成i\codegenerating\codegenerating\codegenerating\application.cpp(1315): message : see declaration of 'parseFuncCallWithReturn'
+f:\thirdgrade_i\编译技术\实验\lab5-代码生成i\codegenerating\codegenerating\codegenerating\application.cpp(1688,21): warning C4018: '<': signed/unsigned mismatch
+f:\thirdgrade_i\编译技术\实验\lab5-代码生成i\codegenerating\codegenerating\codegenerating\application.cpp(1690,14): warning C4018: '<': signed/unsigned mismatch
+f:\thirdgrade_i\编译技术\实验\lab5-代码生成i\codegenerating\codegenerating\codegenerating\application.cpp(1690,66): error C2027: use of undefined type 'Symbol'
+f:\thirdgrade_i\编译技术\实验\lab5-代码生成i\codegenerating\codegenerating\codegenerating\symboltable.h(18): message : see declaration of 'Symbol'
+f:\thirdgrade_i\编译技术\实验\lab5-代码生成i\codegenerating\codegenerating\codegenerating\application.cpp(1690,96): error C2027: use of undefined type 'Symbol'
+f:\thirdgrade_i\编译技术\实验\lab5-代码生成i\codegenerating\codegenerating\codegenerating\symboltable.h(18): message : see declaration of 'Symbol'
+f:\thirdgrade_i\编译技术\实验\lab5-代码生成i\codegenerating\codegenerating\codegenerating\application.cpp(1691,46): error C2027: use of undefined type 'Symbol'
+f:\thirdgrade_i\编译技术\实验\lab5-代码生成i\codegenerating\codegenerating\codegenerating\symboltable.h(18): message : see declaration of 'Symbol'
+f:\thirdgrade_i\编译技术\实验\lab5-代码生成i\codegenerating\codegenerating\codegenerating\application.cpp(1693,20): error C2027: use of undefined type 'Symbol'
+f:\thirdgrade_i\编译技术\实验\lab5-代码生成i\codegenerating\codegenerating\codegenerating\symboltable.h(18): message : see declaration of 'Symbol'
+f:\thirdgrade_i\编译技术\实验\lab5-代码生成i\codegenerating\codegenerating\codegenerating\application.cpp(2146,22): error C2109: subscript requires array or pointer type
+f:\thirdgrade_i\编译技术\实验\lab5-代码生成i\codegenerating\codegenerating\codegenerating\application.cpp(2146,32): error C2027: use of undefined type 'Symbol'
+f:\thirdgrade_i\编译技术\实验\lab5-代码生成i\codegenerating\codegenerating\codegenerating\symboltable.h(18): message : see declaration of 'Symbol'
+f:\thirdgrade_i\编译技术\实验\lab5-代码生成i\codegenerating\codegenerating\codegenerating\application.cpp(2317,32): error C2027: use of undefined type 'Symbol'
+f:\thirdgrade_i\编译技术\实验\lab5-代码生成i\codegenerating\codegenerating\codegenerating\symboltable.h(18): message : see declaration of 'Symbol'
+f:\thirdgrade_i\编译技术\实验\lab5-代码生成i\codegenerating\codegenerating\codegenerating\application.cpp(2341,1): error C2027: use of undefined type 'Symbol'
+f:\thirdgrade_i\编译技术\实验\lab5-代码生成i\codegenerating\codegenerating\codegenerating\symboltable.h(18): message : see declaration of 'Symbol'
+f:\thirdgrade_i\编译技术\实验\lab5-代码生成i\codegenerating\codegenerating\codegenerating\application.cpp(2344,6): error C2027: use of undefined type 'Symbol'
+f:\thirdgrade_i\编译技术\实验\lab5-代码生成i\codegenerating\codegenerating\codegenerating\symboltable.h(18): message : see declaration of 'Symbol'
+f:\thirdgrade_i\编译技术\实验\lab5-代码生成i\codegenerating\codegenerating\codegenerating\application.cpp(2353,6): error C2109: subscript requires array or pointer type
+f:\thirdgrade_i\编译技术\实验\lab5-代码生成i\codegenerating\codegenerating\codegenerating\application.cpp(2355,32): error C2109: subscript requires array or pointer type
+f:\thirdgrade_i\编译技术\实验\lab5-代码生成i\codegenerating\codegenerating\codegenerating\application.cpp(2356,32): error C2109: subscript requires array or pointer type
+f:\thirdgrade_i\编译技术\实验\lab5-代码生成i\codegenerating\codegenerating\codegenerating\application.cpp(2368,6): error C2109: subscript requires array or pointer type
+f:\thirdgrade_i\编译技术\实验\lab5-代码生成i\codegenerating\codegenerating\codegenerating\application.cpp(2370,28): error C2109: subscript requires array or pointer type
+f:\thirdgrade_i\编译技术\实验\lab5-代码生成i\codegenerating\codegenerating\codegenerating\application.cpp(2373,21): error C2109: subscript requires array or pointer type
+f:\thirdgrade_i\编译技术\实验\lab5-代码生成i\codegenerating\codegenerating\codegenerating\application.cpp(2388,6): error C2109: subscript requires array or pointer type
+f:\thirdgrade_i\编译技术\实验\lab5-代码生成i\codegenerating\codegenerating\codegenerating\application.cpp(2401,6): error C2109: subscript requires array or pointer type
+f:\thirdgrade_i\编译技术\实验\lab5-代码生成i\codegenerating\codegenerating\codegenerating\application.cpp(2426,38): error C2109: subscript requires array or pointer type
+f:\thirdgrade_i\编译技术\实验\lab5-代码生成i\codegenerating\codegenerating\codegenerating\application.cpp(2427,11): error C2109: subscript requires array or pointer type
+f:\thirdgrade_i\编译技术\实验\lab5-代码生成i\codegenerating\codegenerating\codegenerating\application.cpp(2490,20): warning C4018: '<': signed/unsigned mismatch

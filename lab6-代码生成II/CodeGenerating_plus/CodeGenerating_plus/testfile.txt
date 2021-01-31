@@ -1,0 +1,9 @@
+void main(){
+    
+    int n = 1;
+	do {
+		n = n + 1;
+		printf("n: ", n);
+	}
+	while (n < 4)
+}

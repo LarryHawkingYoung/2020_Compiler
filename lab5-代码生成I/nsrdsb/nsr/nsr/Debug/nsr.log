@@ -1,0 +1,8 @@
+﻿  Source.cpp
+f:\thirdgrade_i\编译技术\实验\lab5-代码生成i\nsrdsb\nsr\nsr\source.cpp(33,21): warning C4018: '<': signed/unsigned mismatch
+f:\thirdgrade_i\编译技术\实验\lab5-代码生成i\nsrdsb\nsr\nsr\source.cpp(49,21): warning C4018: '<': signed/unsigned mismatch
+f:\thirdgrade_i\编译技术\实验\lab5-代码生成i\nsrdsb\nsr\nsr\source.cpp(88,11): warning C4018: '>': signed/unsigned mismatch
+f:\thirdgrade_i\编译技术\实验\lab5-代码生成i\nsrdsb\nsr\nsr\source.cpp(331,21): warning C4018: '<': signed/unsigned mismatch
+f:\thirdgrade_i\编译技术\实验\lab5-代码生成i\nsrdsb\nsr\nsr\source.cpp(382,21): warning C4018: '<': signed/unsigned mismatch
+f:\thirdgrade_i\编译技术\实验\lab5-代码生成i\nsrdsb\nsr\nsr\source.cpp(390,20): warning C4018: '<': signed/unsigned mismatch
+  nsr.vcxproj -> F:\ThirdGrade_I\编译技术\实验\lab5-代码生成I\nsrdsb\nsr\Debug\nsr.exe

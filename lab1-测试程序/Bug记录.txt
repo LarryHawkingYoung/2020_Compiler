@@ -1,0 +1,10 @@
+1.scanf(a)
+2.printf("sad", a) => "sad"+a
+3.return(a) IDENFER INTCON
+4.void main 无 return 0
+5.int a = b + c × IDENFR int a = sss()
+6.main中 先声明变量 后 写语句 INTTK CHARTK
+7.只有void函数可以return;
+8.char函数 return('b'-'c')为int型 非法 RPARENT（类型不匹配）
+9.每个case只能有一句语句，【PRINTFTK】
+10.非初始化的变量可以int在同一行，初始化的变量不能写在同一行必须分行int [COMMA\SICOM] 

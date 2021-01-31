@@ -1,0 +1,570 @@
+[ans]	[x]	[op]	[y]
+max	1073741824		
+main		j	
+myscanf		:	
+	4	spAlloc	VarDef
+	4	spAlloc	(Ra)
+		raPush	
+	INT	ReadByType	
+$v0	4	spSET$v0	n
+~t1	4	spGET	
+~t1		return	
+ENDmyscanf		j	
+ENDmyscanf		:	
+		raPop	
+	8	spFree	
+		jr	
+myprintf		:	
+	4	spAlloc	(Ra)
+		raPush	
+~t2	4	spGET	
+		print	~t2
+ENDmyprintf		j	
+ENDmyprintf		:	
+		raPop	
+	4	spFree	
+		jr	
+checkrange		:	
+	4	spAlloc	(Ra)
+		raPush	
+label1		:	
+~t3	4	spGET	
+label2	~t3	<=	max
+~t4	4	spGET	
+~t5	~t4	-	max
+~t5	4	spSET	
+label1		j	
+label2		:	
+label3		:	
+~t6	4	spGET	
+label4	~t6	>=	0
+~t7	4	spGET	
+~t8	~t7	+	max
+~t8	4	spSET	
+label3		j	
+label4		:	
+~t9	4	spGET	
+~t9		return	
+ENDcheckrange		j	
+ENDcheckrange		:	
+		raPop	
+	4	spFree	
+		jr	
+reduce		:	
+	4	spAlloc	VarDef
+	4	spAlloc	VarDef
+	4	spAlloc	(Ra)
+		raPush	
+~t10	12	spGET	
+label5	~t10	!=	0
+		raPush	
+	4	spAlloc	(InterQuat)
+~t10	0	spPush	(InterQuat)
+~t11	20	spGET	
+~t13	24	spGET	
+~t12	~t11	+	~t13
+	4	spAlloc	(ParaSize)
+~t12	0	spPush	(ParaPush)
+checkrange		jal	
+~t14		$v0	
+	4	spFree	
+~t10	0	spGET	(InterQuat)
+	4	spFree	(InterQuat)
+		raPop	
+~t14		return	
+ENDreduce		j	
+label5		:	
+~t15	12	spGET	
+label7	~t15	!=	1
+0	8	spSET	
+1	4	spSET	
+label8		:	
+~t16	4	spGET	
+label9	~t16	>=	max
+~t17	16	spGET	
+~t19	4	spGET	
+~t18	~t17	/	~t19
+~t21	16	spGET	
+~t23	4	spGET	
+~t22	~t21	/	~t23
+~t24	~t22	/	2
+~t25	~t24	*	2
+~t20	~t18	-	~t25
+~t26	20	spGET	
+~t28	4	spGET	
+~t27	~t26	/	~t28
+~t30	20	spGET	
+~t32	4	spGET	
+~t31	~t30	/	~t32
+~t33	~t31	/	2
+~t34	~t33	*	2
+~t29	~t27	-	~t34
+label10	~t20	!=	~t29
+~t35	8	spGET	
+~t36	~t35	*	2
+~t36	8	spSET	
+label11		j	
+label10		:	
+~t37	8	spGET	
+~t38	~t37	*	2
+~t39	~t38	+	1
+~t39	8	spSET	
+label11		:	
+~t40	4	spGET	
+~t41	~t40	*	2
+~t41	4	spSET	
+label8		j	
+label9		:	
+~t42	8	spGET	
+~t42		return	
+ENDreduce		j	
+label7		:	
+~t43	12	spGET	
+label13	~t43	!=	2
+~t44	16	spGET	
+~t45	20	spGET	
+label14	~t44	<=	~t45
+~t46	16	spGET	
+~t46		return	
+ENDreduce		j	
+label15		j	
+label14		:	
+~t47	20	spGET	
+~t47		return	
+ENDreduce		j	
+label15		:	
+label13		:	
+~t48	12	spGET	
+label17	~t48	!=	3
+0	8	spSET	
+1	4	spSET	
+label18		:	
+~t49	4	spGET	
+label19	~t49	>=	max
+~t50	16	spGET	
+~t52	4	spGET	
+~t51	~t50	/	~t52
+~t54	16	spGET	
+~t56	4	spGET	
+~t55	~t54	/	~t56
+~t57	~t55	/	2
+~t58	~t57	*	2
+~t53	~t51	-	~t58
+label20	~t53	!=	1
+~t59	8	spGET	
+~t60	~t59	*	2
+~t61	~t60	+	1
+~t61	8	spSET	
+label21		j	
+label20		:	
+~t62	20	spGET	
+~t64	4	spGET	
+~t63	~t62	/	~t64
+~t66	20	spGET	
+~t68	4	spGET	
+~t67	~t66	/	~t68
+~t69	~t67	/	2
+~t70	~t69	*	2
+~t65	~t63	-	~t70
+label22	~t65	!=	1
+~t71	8	spGET	
+~t72	~t71	*	2
+~t73	~t72	+	1
+~t73	8	spSET	
+label22		:	
+~t74	8	spGET	
+~t75	~t74	*	2
+~t75	8	spSET	
+label21		:	
+~t76	4	spGET	
+~t77	~t76	*	2
+~t77	4	spSET	
+label18		j	
+label19		:	
+~t78	8	spGET	
+~t78		return	
+ENDreduce		j	
+label17		:	
+~t79	12	spGET	
+label25	~t79	!=	4
+0	8	spSET	
+1	4	spSET	
+label26		:	
+~t80	4	spGET	
+label27	~t80	>=	max
+~t81	16	spGET	
+~t83	4	spGET	
+~t82	~t81	/	~t83
+~t85	16	spGET	
+~t87	4	spGET	
+~t86	~t85	/	~t87
+~t88	~t86	/	2
+~t89	~t88	*	2
+~t84	~t82	-	~t89
+label28	~t84	!=	1
+~t90	20	spGET	
+~t92	4	spGET	
+~t91	~t90	/	~t92
+~t94	20	spGET	
+~t96	4	spGET	
+~t95	~t94	/	~t96
+~t97	~t95	/	2
+~t98	~t97	*	2
+~t93	~t91	-	~t98
+label29	~t93	!=	1
+~t99	8	spGET	
+~t100	~t99	*	2
+~t101	~t100	+	1
+~t101	8	spSET	
+label30		j	
+label29		:	
+~t102	8	spGET	
+~t103	~t102	*	2
+~t103	8	spSET	
+label30		:	
+label31		j	
+label28		:	
+~t104	8	spGET	
+~t105	~t104	*	2
+~t105	8	spSET	
+label31		:	
+~t106	4	spGET	
+~t107	~t106	*	2
+~t107	4	spSET	
+label26		j	
+label27		:	
+~t108	8	spGET	
+~t108		return	
+ENDreduce		j	
+label25		:	
+0		return	
+ENDreduce		j	
+ENDreduce		:	
+		raPop	
+	12	spFree	
+		jr	
+getvalue		:	
+	4	spAlloc	(Ra)
+		raPush	
+~t109	12	spGET	
+label33	~t109	>=	0
+0		return	
+ENDgetvalue		j	
+label33		:	
+~t110	16	spGET	
+label35	~t110	>=	0
+0		return	
+ENDgetvalue		j	
+label35		:	
+~t111	12	spGET	
+~t112	4	spGET	
+label37	~t111	<	~t112
+0		return	
+ENDgetvalue		j	
+label37		:	
+~t113	16	spGET	
+~t114	8	spGET	
+label39	~t113	<	~t114
+0		return	
+ENDgetvalue		j	
+label39		:	
+~t115	12	spGET	
+~t117	8	spGET	
+~t116	~t115	*	~t117
+~t119	16	spGET	
+~t118	~t116	+	~t119
+~t120	~t118	*	4
+~t121	a	ARRGET	~t120
+~t121		return	
+ENDgetvalue		j	
+ENDgetvalue		:	
+		raPop	
+	4	spFree	
+		jr	
+convn		:	
+	4	spAlloc	VarDef
+0	0	spSET	
+	4	spAlloc	VarDef
+0	0	spSET	
+	4	spAlloc	VarDef
+	4	spAlloc	VarDef
+	4	spAlloc	VarDef
+	4	spAlloc	VarDef
+1	0	spSET	
+	4	spAlloc	VarDef
+1	0	spSET	
+	4	spAlloc	VarDef
+1	0	spSET	
+	4	spAlloc	VarDef
+1	0	spSET	
+	4	spAlloc	(Ra)
+		raPush	
+label41		:	
+~t122	16	spGET	
+label42	~t122	!=	1
+0	32	spSET	
+label43		:	
+~t123	12	spGET	
+label44	~t123	!=	1
+0	20	spSET	
+~t124	36	spGET	
+~t126	52	spGET	
+~t127	~t126	/	2
+~t125	~t124	-	~t127
+~t125	28	spSET	
+label45		:	
+~t128	8	spGET	
+label46	~t128	!=	1
+~t129	32	spGET	
+~t131	52	spGET	
+~t132	~t131	/	2
+~t130	~t129	-	~t132
+~t130	24	spSET	
+label47		:	
+~t133	4	spGET	
+label48	~t133	!=	1
+		raPush	
+	48	spAlloc	(InterQuat)
+~t122	0	spPush	(InterQuat)
+~t123	4	spPush	(InterQuat)
+~t124	8	spPush	(InterQuat)
+~t125	12	spPush	(InterQuat)
+~t126	16	spPush	(InterQuat)
+~t127	20	spPush	(InterQuat)
+~t128	24	spPush	(InterQuat)
+~t129	28	spPush	(InterQuat)
+~t130	32	spPush	(InterQuat)
+~t131	36	spPush	(InterQuat)
+~t132	40	spPush	(InterQuat)
+~t133	44	spPush	(InterQuat)
+~t134	88	spGET	
+~t135	68	spGET	
+		raPush	
+	56	spAlloc	(InterQuat)
+~t122	0	spPush	(InterQuat)
+~t123	4	spPush	(InterQuat)
+~t124	8	spPush	(InterQuat)
+~t125	12	spPush	(InterQuat)
+~t126	16	spPush	(InterQuat)
+~t127	20	spPush	(InterQuat)
+~t128	24	spPush	(InterQuat)
+~t129	28	spPush	(InterQuat)
+~t130	32	spPush	(InterQuat)
+~t131	36	spPush	(InterQuat)
+~t132	40	spPush	(InterQuat)
+~t133	44	spPush	(InterQuat)
+~t134	48	spPush	(InterQuat)
+~t135	52	spPush	(InterQuat)
+~t136	148	spGET	
+~t137	152	spGET	
+~t138	132	spGET	
+~t139	128	spGET	
+	16	spAlloc	(ParaSize)
+~t136	0	spPush	(ParaPush)
+~t137	4	spPush	(ParaPush)
+~t138	8	spPush	(ParaPush)
+~t139	12	spPush	(ParaPush)
+getvalue		jal	
+~t140		$v0	
+	16	spFree	
+~t122	0	spGET	(InterQuat)
+~t123	4	spGET	(InterQuat)
+~t124	8	spGET	(InterQuat)
+~t125	12	spGET	(InterQuat)
+~t126	16	spGET	(InterQuat)
+~t127	20	spGET	(InterQuat)
+~t128	24	spGET	(InterQuat)
+~t129	28	spGET	(InterQuat)
+~t130	32	spGET	(InterQuat)
+~t131	36	spGET	(InterQuat)
+~t132	40	spGET	(InterQuat)
+~t133	44	spGET	(InterQuat)
+~t134	48	spGET	(InterQuat)
+~t135	52	spGET	(InterQuat)
+	56	spFree	(InterQuat)
+		raPop	
+	12	spAlloc	(ParaSize)
+~t134	0	spPush	(ParaPush)
+~t135	4	spPush	(ParaPush)
+~t140	8	spPush	(ParaPush)
+reduce		jal	
+~t141		$v0	
+	12	spFree	
+~t122	0	spGET	(InterQuat)
+~t123	4	spGET	(InterQuat)
+~t124	8	spGET	(InterQuat)
+~t125	12	spGET	(InterQuat)
+~t126	16	spGET	(InterQuat)
+~t127	20	spGET	(InterQuat)
+~t128	24	spGET	(InterQuat)
+~t129	28	spGET	(InterQuat)
+~t130	32	spGET	(InterQuat)
+~t131	36	spGET	(InterQuat)
+~t132	40	spGET	(InterQuat)
+~t133	44	spGET	(InterQuat)
+	48	spFree	(InterQuat)
+		raPop	
+~t141	20	spSET	
+~t142	24	spGET	
+~t143	~t142	+	1
+~t143	24	spSET	
+~t144	24	spGET	
+~t145	32	spGET	
+~t147	52	spGET	
+~t148	~t147	/	2
+~t146	~t145	+	~t148
+label49	~t144	<	~t146
+0	4	spSET	
+label49		:	
+label47		j	
+label48		:	
+1	4	spSET	
+~t149	28	spGET	
+~t150	~t149	+	1
+~t150	28	spSET	
+~t151	28	spGET	
+~t152	36	spGET	
+~t154	52	spGET	
+~t155	~t154	/	2
+~t153	~t152	+	~t155
+label51	~t151	<	~t153
+0	8	spSET	
+label51		:	
+label45		j	
+label46		:	
+1	8	spSET	
+~t156	36	spGET	
+~t158	48	spGET	
+~t157	~t156	*	~t158
+~t160	32	spGET	
+~t159	~t157	+	~t160
+~t161	20	spGET	
+~t162	~t159	*	4
+~t161	b	ARRSETbyVAR	~t162
+~t163	32	spGET	
+~t164	~t163	+	1
+~t164	32	spSET	
+~t165	32	spGET	
+~t166	48	spGET	
+label53	~t165	<	~t166
+0	12	spSET	
+label53		:	
+label43		j	
+label44		:	
+1	12	spSET	
+~t167	36	spGET	
+~t168	~t167	+	1
+~t168	36	spSET	
+~t169	36	spGET	
+~t170	44	spGET	
+label55	~t169	<	~t170
+0	16	spSET	
+label55		:	
+label41		j	
+label42		:	
+0		return	
+ENDconvn		j	
+ENDconvn		:	
+		raPop	
+	40	spFree	
+		jr	
+mymemmove		:	
+	4	spAlloc	VarDef
+0	0	spSET	
+	4	spAlloc	(Ra)
+		raPush	
+label57		:	
+~t171	4	spGET	
+~t172	8	spGET	
+label58	~t171	>=	~t172
+~t173	4	spGET	
+~t174	4	spGET	
+~t175	~t174	*	4
+~t176	b	ARRGET	~t175
+~t177	~t173	*	4
+~t176	a	ARRSETbyVAR	~t177
+~t178	4	spGET	
+~t179	~t178	+	1
+~t179	4	spSET	
+label57		j	
+label58		:	
+ENDmymemmove		:	
+		raPop	
+	8	spFree	
+		jr	
+main		:	
+i	0		
+myscanf		jal	
+~t180		$v0	
+c	~t180		
+myscanf		jal	
+~t181		$v0	
+n	~t181		
+myscanf		jal	
+~t182		$v0	
+m	~t182		
+myscanf		jal	
+~t183		$v0	
+arrlen	~t183		
+label59		:	
+label60	i	>=	arrlen
+myscanf		jal	
+~t184		$v0	
+~t185	i	*	4
+~t184	a	ARRSETbyVAR	~t185
+~t186	i	+	1
+i	~t186		
+label59		j	
+label60		:	
+myscanf		jal	
+~t187		$v0	
+task	~t187		
+i	0		
+label61		:	
+label62	i	>=	task
+myscanf		jal	
+~t188		$v0	
+~t189	i	*	4
+~t188	kernelid	ARRSETbyVAR	~t189
+~t190	i	+	1
+i	~t190		
+label61		j	
+label62		:	
+i	0		
+label63		:	
+label64	i	>=	task
+~t191	i	*	4
+~t192	kernelid	ARRGET	~t191
+	16	spAlloc	(ParaSize)
+~t192	0	spPush	(ParaPush)
+n	4	spPush	(ParaPush)
+m	8	spPush	(ParaPush)
+c	12	spPush	(ParaPush)
+convn		jal	
+~t193		$v0	
+	16	spFree	
+~t194	n	*	m
+	4	spAlloc	(ParaSize)
+~t194	0	spPush	(ParaPush)
+mymemmove		jal	
+	4	spFree	
+~t195	i	+	1
+i	~t195		
+label63		j	
+label64		:	
+i	0		
+label65		:	
+~t196	n	*	m
+label66	i	>=	~t196
+~t197	i	*	4
+~t198	a	ARRGET	~t197
+	4	spAlloc	(ParaSize)
+~t198	0	spPush	(ParaPush)
+myprintf		jal	
+	4	spFree	
+~t199	i	+	1
+i	~t199		
+label65		j	
+label66		:	
+EndMain		j	
+EndMain		:	

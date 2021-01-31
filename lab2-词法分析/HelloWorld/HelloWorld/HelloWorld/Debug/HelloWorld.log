@@ -1,0 +1,4 @@
+﻿  HelloWorld.cpp
+F:\ThirdGrade_I\编译技术\实验\实验2\HelloWorld\HelloWorld\HelloWorld\HelloWorld.cpp(42,41): warning C4018: '<': signed/unsigned mismatch
+F:\ThirdGrade_I\编译技术\实验\实验2\HelloWorld\HelloWorld\HelloWorld\HelloWorld.cpp(186,20): warning C4018: '<': signed/unsigned mismatch
+  HelloWorld.vcxproj -> F:\ThirdGrade_I\编译技术\实验\实验2\HelloWorld\HelloWorld\Debug\HelloWorld.exe
